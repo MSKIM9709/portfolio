@@ -815,16 +815,27 @@ section {
 }
 
 .achievement-body {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 32px;
 }
 
-.ach-bg-card, .ach-action-card {
+.ach-bg-card {
     background: rgba(255, 255, 255, 0.015);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 24px;
+    flex: 1 1 420px;
+    box-sizing: border-box;
+}
+
+.ach-action-card {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    flex: 1.3 1 420px;
+    box-sizing: border-box;
 }
 
 .ach-sub-title {
@@ -881,6 +892,8 @@ section {
 
 .ach-notes-card {
     grid-column: 1 / span 2;
+    width: 100%;
+    box-sizing: border-box;
     background: rgba(255, 255, 255, 0.01);
     border-left: 3px solid var(--text-muted);
     padding: 16px 24px;
@@ -1470,8 +1483,15 @@ footer p span {
     html { font-size: 15px; }
     .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 32px; }
     .hero-content h1 { font-size: 3.5rem; }
-    .achievement-body { grid-template-columns: 1fr; gap: 20px; }
-    .ach-notes-card { grid-column: 1; }
+    .achievement-body {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    .ach-bg-card, .ach-action-card {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+    }
+    .ach-notes-card { width: 100% !important; }
     .education-data-wrap { grid-column: 1; }
     .proj-tab-grid { grid-template-columns: 1fr; gap: 24px; }
 }
@@ -1575,8 +1595,12 @@ footer p span {
     
     /* 경력 및 주요 성과 섹션 모바일 가독성 최적화 (1열 구조 강제 및 텍스트 맞춤) */
     .achievement-body {
-        grid-template-columns: 1fr !important;
+        flex-direction: column !important;
         gap: 16px !important;
+    }
+    .ach-bg-card, .ach-action-card {
+        flex: 1 1 auto !important;
+        width: 100% !important;
     }
     .achievement-card { 
         padding: 20px !important; 
