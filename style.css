@@ -1484,10 +1484,59 @@ footer p span {
     
     .hero-grid { grid-template-columns: 1fr; }
     .hero { padding-top: 140px; min-height: auto; padding-bottom: 80px; }
-    .hero-kpi-board { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .hero-kpi-board {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    .hero-kpi-board .kpi-card {
+        padding: 12px 14px !important;
+    }
+    .hero-kpi-board .kpi-card .kpi-val {
+        font-size: 1.5rem !important;
+    }
+    .hero-kpi-board .kpi-card:last-child {
+        grid-column: span 2;
+    }
     
     .summary-grid { grid-template-columns: 1fr; }
-    .tech-capability-grid { grid-template-columns: 1fr; }
+    
+    .tech-capability-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    .tech-capability-grid .credential-item {
+        padding: 16px 14px !important;
+        gap: 12px !important;
+    }
+    .tech-capability-grid .credential-item:last-child {
+        grid-column: span 2;
+    }
+    .tech-capability-grid .credential-item h4 {
+        font-size: 0.85rem !important;
+    }
+    .tech-capability-grid .credential-item p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .direction-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    .direction-card {
+        padding: 16px 14px !important;
+    }
+    .direction-card h3 {
+        font-size: 0.9rem !important;
+        margin-bottom: 6px !important;
+    }
+    .direction-card p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+    }
     
     .competency-card {
         grid-template-columns: 1fr;
@@ -3528,7 +3577,8 @@ input:checked + .slider-toggle:before {
 
 @media (max-width: 768px) {
     .tech-board-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
     }
 }
 
