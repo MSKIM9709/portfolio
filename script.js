@@ -55,29 +55,55 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: '0px 0px -40px 0px'
     };
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+    try {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // If it's the capability section, animate skill bars
+                    if (entry.target.id === 'analytics') {
+                        animateSkillBars();
+                    }
+                    
+                    // If it's the experience section, animate the premium education dashboard charts
+                    if (entry.target.id === 'experience') {
+                        animateEducationDashboard();
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+    } catch (e) {
+        console.warn('IntersectionObserver not supported, activating all reveal elements immediately.', e);
+        revealElements.forEach(el => {
+            el.classList.add('active');
+        });
+        animateSkillBars();
+        animateEducationDashboard();
+    }
+
+    // Fallback: 1.2초 후에 아직 active가 안 된 모든 reveal 요소를 강제로 표시 (인앱 브라우저 및 IntersectionObserver 오작동 완벽 보완)
+    setTimeout(() => {
+        revealElements.forEach(el => {
+            if (!el.classList.contains('active')) {
+                el.classList.add('active');
                 
-                // If it's the capability section, animate skill bars
-                if (entry.target.id === 'analytics') {
+                // 연동 애니메이션 강제 실행
+                if (el.id === 'analytics') {
                     animateSkillBars();
                 }
-                
-                // If it's the experience section, animate the premium education dashboard charts
-                if (entry.target.id === 'experience') {
+                if (el.id === 'experience') {
                     animateEducationDashboard();
                 }
-                
-                observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
-
-    revealElements.forEach(el => {
-        revealObserver.observe(el);
-    });
+    }, 1200);
 
     function animateSkillBars() {
         skillBars.forEach(bar => {
