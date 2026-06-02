@@ -1538,10 +1538,23 @@ footer p span {
         line-height: 1.4 !important;
     }
     
+    .competency-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
     .competency-card {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 30px;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        padding: 18px 12px !important;
+    }
+    .competency-card h3 {
+        font-size: 1rem !important;
+    }
+    .competency-card ul li {
+        font-size: 0.75rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 6px !important;
     }
     .comp-left {
         border-right: none;
