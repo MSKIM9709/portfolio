@@ -251,104 +251,253 @@
                                 <li><strong>비주얼 대시보드 구축</strong>: 부서·직급·수당별 총합 차액이 실시간으로 집계되어 신속한 의사결정을 돕는 표준 시뮬레이션 도구를 안정적으로 확보했습니다.</li>
                             </ul>
                         </div>
+
+                        <!-- 실시간 통상임금 시뮬레이터 데모 모형 -->
+                        <div class="wage-simulator-container">
+                            <div class="simulator-tag">PEOPLE ANALYTICS INTERACTIVE DEMO</div>
+                            <div class="simulator-grid">
+                                <!-- 조작 패널 (Inputs) -->
+                                <div class="sim-panel-left">
+                                    <h5 class="sim-title">시뮬레이션 변수 제어</h5>
+                                    
+                                    <!-- 기본급 슬라이더 -->
+                                    <div class="control-group">
+                                        <div class="control-label">
+                                            <span>기본급 (Base Salary)</span>
+                                            <div class="input-sync-wrap">
+                                                <input type="text" id="baseSalaryNum" value="3,000,000" class="sim-num-input">
+                                                <span class="control-unit">원</span>
+                                            </div>
+                                        </div>
+                                        <input type="range" id="baseSalary" min="2000000" max="5000000" step="100000" value="3000000" class="sim-slider">
+                                    </div>
+                                    
+                                    <!-- 연장근로 시간 슬라이더 -->
+                                    <div class="control-group">
+                                        <div class="control-label">
+                                            <span>월 평균 연장근로시간</span>
+                                            <div class="input-sync-wrap">
+                                                <input type="number" id="overtimeHoursNum" min="0" max="50" step="1" value="40" class="sim-num-input">
+                                                <span class="control-unit">시간</span>
+                                            </div>
+                                        </div>
+                                        <input type="range" id="overtimeHours" min="0" max="50" step="1" value="40" class="sim-slider">
+                                    </div>
+
+                                    <!-- 분석 대상 인원 슬라이더 -->
+                                    <div class="control-group">
+                                        <div class="control-label">
+                                            <span>분석 대상 인원 (Headcount)</span>
+                                            <div class="input-sync-wrap">
+                                                <input type="number" id="headcountNum" min="1" max="500" step="1" value="470" class="sim-num-input">
+                                                <span class="control-unit">명</span>
+                                            </div>
+                                        </div>
+                                        <input type="range" id="headcount" min="1" max="500" step="1" value="470" class="sim-slider">
+                                    </div>
+                                    
+                                    <!-- 조회 주기 버튼 그룹 -->
+                                    <div class="control-group">
+                                        <div class="control-label" style="margin-bottom: 12px;">
+                                            <span>분석 조회 주기 (Period)</span>
+                                        </div>
+                                        <div class="period-tab-group">
+                                            <button type="button" class="period-tab-btn active" id="btnPeriodMonthly">월간 (Monthly)</button>
+                                            <button type="button" class="period-tab-btn" id="btnPeriodYearly">연간 (Annual)</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 고정수당 토글 스위치 -->
+                                    <div class="control-group">
+                                        <div class="control-label" style="margin-bottom: 12px;">
+                                            <span>쟁점 수당별 고정성(통상임금 포함) 여부</span>
+                                        </div>
+                                        
+                                        <div class="toggle-list">
+                                            <!-- 식대 -->
+                                            <div class="toggle-item">
+                                                <div class="toggle-info">
+                                                    <span class="toggle-name">식대</span>
+                                                    <span class="toggle-period-badge monthly">월간</span>
+                                                    <span class="toggle-amount">+200,000원</span>
+                                                </div>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="allowanceMeal" checked>
+                                                    <span class="slider-toggle"></span>
+                                                </label>
+                                            </div>
+
+                                            <!-- 교통비 -->
+                                            <div class="toggle-item">
+                                                <div class="toggle-info">
+                                                    <span class="toggle-name">교통비</span>
+                                                    <span class="toggle-period-badge monthly">월간</span>
+                                                    <span class="toggle-amount">+100,000원</span>
+                                                </div>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="allowanceTrans" checked>
+                                                    <span class="slider-toggle"></span>
+                                                </label>
+                                            </div>
+
+                                            <!-- 정기상여 -->
+                                            <div class="toggle-item">
+                                                <div class="toggle-info">
+                                                    <span class="toggle-name">정기상여</span>
+                                                    <span class="toggle-period-badge">연간</span>
+                                                    <span class="toggle-amount">+1,000,000원</span>
+                                                </div>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="allowanceBonus" checked>
+                                                    <span class="slider-toggle"></span>
+                                                </label>
+                                            </div>
+ 
+                                            <!-- 명절비 (기본 미포함) -->
+                                            <div class="toggle-item">
+                                                <div class="toggle-info">
+                                                    <span class="toggle-name">명절비</span>
+                                                    <span class="toggle-period-badge">연간</span>
+                                                    <span class="toggle-amount">+1,000,000원</span>
+                                                </div>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="allowanceHoliday">
+                                                    <span class="slider-toggle"></span>
+                                                </label>
+                                            </div>
+ 
+                                            <!-- 휴가비 (기본 미포함) -->
+                                            <div class="toggle-item">
+                                                <div class="toggle-info">
+                                                    <span class="toggle-name">휴가비</span>
+                                                    <span class="toggle-period-badge">연간</span>
+                                                    <span class="toggle-amount">+800,000원</span>
+                                                </div>
+                                                <label class="switch">
+                                                    <input type="checkbox" id="allowanceVacation">
+                                                    <span class="slider-toggle"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 
+                                 <!-- 결과 패널 (Outputs) -->
+                                 <div class="sim-panel-right">
+                                     <h5 class="sim-title">실시간 분석 결과</h5>
+                                     
+                                     <div class="result-board">
+                                         <!-- 통상임금 시간급 -->
+                                         <div class="result-card">
+                                             <span class="res-label">통상임금 시급 (1인 기준)</span>
+                                             <div class="res-num-wrap">
+                                                 <span class="res-number" id="hourlyWage">17,225</span>
+                                                 <span class="res-unit">원</span>
+                                             </div>
+                                             <div class="res-comparison">
+                                                 <span class="comp-label">변경 전:</span>
+                                                 <span class="comp-val" id="beforeHourly">14,354</span>원
+                                                 <span class="comp-diff-val" id="diffHourly">(+2,871원)</span>
+                                             </div>
+                                             <div class="card-formula">
+                                                 <span class="math-expr">(<span id="f-baseSalary">3,000,000</span> + <span id="f-allowances">600,000</span>) / 209</span>
+                                             </div>
+                                             <p class="res-desc">기준시간: 월 209시간 (연간수당 1/12 분할 반영)</p>
+                                         </div>
+                                         
+                                         <!-- 예상 연장근로수당 -->
+                                         <div class="result-card">
+                                             <span class="res-label">예상 연장근로수당 <span id="labelOvertimePeriod">(월간 총합)</span></span>
+                                             <div class="res-num-wrap">
+                                                 <span class="res-number highlight" id="overtimePay">485,741,616</span>
+                                                 <span class="res-unit">원</span>
+                                             </div>
+                                             <div class="res-comparison">
+                                                 <span class="comp-label">변경 전:</span>
+                                                 <span class="comp-val" id="beforeOvertime">404,784,774</span>원
+                                                 <span class="comp-diff-val" id="diffOvertime">(+80,956,842원)</span>
+                                             </div>
+                                             <div class="card-formula">
+                                                 <span class="math-expr">(<span id="f-hourlyWageMultiplier">20,574</span> * <span id="f-overtimeHours">40</span> * 1.5) * <span id="f-headcount">470</span>명<span id="f-periodMultiplier"></span></span>
+                                             </div>
+                                             <p class="res-desc" id="descOvertime">470명 대상 연장근로 총합</p>
+                                         </div>
+ 
+                                         <!-- 리스크 등급 표시기 -->
+                                         <div class="result-card full-width">
+                                             <span class="res-label">법적 리스크 등급</span>
+                                             <div class="risk-indicator-wrap">
+                                                 <div class="risk-lamp-group">
+                                                     <div class="risk-lamp green" id="riskGreen"></div>
+                                                     <div class="risk-lamp yellow" id="riskYellow"></div>
+                                                     <div class="risk-lamp red" id="riskRed"></div>
+                                                 </div>
+                                                 <div class="risk-text-box">
+                                                     <span class="risk-status" id="riskStatus">주의</span>
+                                                     <span class="risk-comment" id="riskComment">일부 쟁점 수당이 통상임금 산정에서 제외되어 소송 리스크가 존재합니다.</span>
+                                                 </div>
+                                             </div>
+                                         </div>
+ 
+                                          <!-- 총 인건비 변동 비교바 (이해하기 쉬운 프리미엄 비주얼 버전) -->
+                                          <div class="result-card full-width premium-delta-card">
+                                              <div class="delta-main-header">
+                                                  <span class="res-label">통상임금 범위 확대에 따른 총인건비 변동</span>
+                                                  <div class="delta-highlights">
+                                                      <span class="delta-value-badge" id="deltaPercent">+5.4% (+175,406,538원)</span>
+                                                  </div>
+                                              </div>
+                                              
+                                              <!-- Before & After Grid -->
+                                              <div class="delta-comparison-grid">
+                                                  <div class="comparison-block before">
+                                                      <div class="comp-block-lbl">산입 전 총인건비</div>
+                                                      <div class="comp-block-val"><span id="baselineTotalCost">3,271,784,774</span><span class="comp-block-unit">원</span></div>
+                                                      <div class="comp-block-desc">기존 임금체계 (수당 미산입)</div>
+                                                  </div>
+                                                  <div class="comparison-arrow-wrap">
+                                                      <span class="comp-arrow-icon">➔</span>
+                                                  </div>
+                                                  <div class="comparison-block after">
+                                                      <div class="comp-block-lbl">산입 후 예상 총인건비</div>
+                                                      <div class="comp-block-val highlight"><span id="totalCost">3,447,191,312</span><span class="comp-block-unit">원</span></div>
+                                                      <div class="comp-block-desc">쟁점수당 산입 시 법정인건비</div>
+                                                  </div>
+                                              </div>
+
+                                              <!-- 직관적인 계산 상세 분해 구조 (Calculation Breakdown Inline) -->
+                                              <div class="calculation-breakdown-inline">
+                                                   <span class="breakdown-inline-lbl">산출 공식</span>
+                                                   <span class="breakdown-inline-expr">
+                                                       [ 기본 <span id="f-totalBase">3,000,000</span> + 고정 <span id="f-totalAllowances">533,333</span> + 연장 <span id="f-totalOvertime">1,234,450</span> ] 원
+                                                       <span class="expr-operator">×</span>
+                                                       <span id="f-totalHeadcount">470</span>명<span id="f-totalPeriodMultiplier"></span>
+                                                   </span>
+                                               </div>
+
+                                              <!-- 상승률 게이지 바 -->
+                                              <div class="delta-bar-section">
+                                                  <div class="delta-bar-lbl-row">
+                                                      <span>기존 대비 인건비 증가율</span>
+                                                      <span class="delta-bar-percent" id="deltaBarPercent">5.4%</span>
+                                                  </div>
+                                                  <div class="delta-bar-container">
+                                                      <div class="delta-bar-fill" id="deltaBarFill" style="width: 5.4%;"></div>
+                                                  </div>
+                                              </div>
+                                              
+                                              <p class="res-desc">
+                                                  * <strong>쉽게 설명해 드릴게요</strong>: 쟁점이 되는 고정수당(식대, 교통비 등)을 통상임금에 산입하면 <strong>통상시급이 상승</strong>하게 되며, 이에 비례해 <strong>연장근로수당 및 전체 인건비가 동반 상승</strong>하게 됩니다. 위 그래프는 이에 따른 총액 변동 지표입니다. <span id="labelBaselineCostPeriod">(월간 총합)</span>
+                                              </p>
+                                          </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
                     </div>
                 </div>
 
-                <!-- 성과 3 -->
-                <div class="glass-card achievement-card">
-                    <div class="achievement-index">03</div>
-                    <div class="achievement-header">
-                        <h4>급여 프로세스 자동화 및 오지급률 최소화</h4>
-                        <div class="metric-highlight-box">
-                            <span class="metric-lbl">주요 성과</span>
-                            <span class="metric-val">연간 급여 누락 및 오류 횟수 7회 ➔ 4회 감소 (43% 단축)</span>
-                        </div>
-                    </div>
-                    
-                    <div class="achievement-body">
-                        <div class="ach-bg-card">
-                            <div class="ach-sub-title">배경 및 문제 분석</div>
-                            <p>
-                                기존 엑셀 수식 기반의 단순 급여 작업 템플릿으로 인해 반복적 수작업이 과다하고 처리 속도가 지연되었으며, 수기 입력에 의한 오류가 정기적으로 발생하여 불필요한 행정 소요와 직원 불만이 야기되었습니다.
-                            </p>
-                        </div>
-                        
-                        <div class="ach-action-card">
-                            <div class="ach-sub-title">수행 내용 및 해결 방안</div>
-                            <ul>
-                                <li><strong>VBA 자동화 엔진 도입</strong>: 기존의 단순 반복적이던 엑셀 데이터 가공 과정을 매크로 및 VBA를 활용하여 '원클릭'으로 처리할 수 있도록 완전 자동화했습니다.</li>
-                                <li><strong>SQL 공식 최신화</strong>: 사내 ERP 및 급여 연동 모듈 내부에서 작동하는 노후화된 SQL 쿼리 공식을 최신 임금 규정과 현행 지급 기준에 부합하도록 개편했습니다.</li>
-                                <li><strong>데이터 입력 최소화 및 유효성 검증</strong>: 인적 수기 수정을 최소화하는 구조로 템플릿을 재정비하고 실시간 이중 검증 단계를 추가해 데이터 정밀도를 극대화했습니다.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 성과 4 -->
-                <div class="glass-card achievement-card emerald">
-                    <div class="achievement-index">04</div>
-                    <div class="achievement-header">
-                        <h4>관리직 대상 연간 교육 프로그램 설계 및 효과성 측정</h4>
-                        <div class="metric-highlight-box emerald">
-                            <span class="metric-lbl">주요 성과</span>
-                            <span class="metric-val">관리직 136명 누계 운영 | 생성형 AI 4.29 / 리텐션 4.53 (5점 만점)</span>
-                        </div>
-                    </div>
-                    
-                    <div class="achievement-body">
-                        <div class="ach-bg-card">
-                            <div class="ach-sub-title" style="color: var(--emerald);">배경 및 문제 분석</div>
-                            <p>
-                                매년 약 120명의 핵심 관리직군을 대상으로 의무 교육 과정이 편성되었으나, 교육 전후의 실질적 역량 변화나 현업 기여도를 측정하지 못하고 일회성 강의에 그치는 한계가 있어, 분석 기반의 체계적인 설계와 효과 추적이 필요했습니다.
-                            </p>
-                        </div>
-                        
-                        <div class="ach-action-card">
-                            <div class="ach-sub-title" style="color: var(--emerald);">수행 내용 및 해결 방안</div>
-                            <ul>
-                                <li><strong>엔드투엔드 단독 총괄</strong>: 협력업체 선정 제안요청서(RFP) 작성, 업체 비딩 평가, 예산 집행 관리, 교육 현장 운영 전 과정을 리드했습니다.</li>
-                                <li><strong>효과성 측정 설문 정밀화</strong>: 단순 만족도 파악을 넘어 커크패트릭(Kirkpatrick) 평가 모델을 벤치마킹하여 사전/사후 실질 역량 변화 지표를 설계하고 통계 분석을 수행했습니다.</li>
-                                <li><strong>차년도 환류 전략 수립</strong>: 수집된 사전·사후 데이터를 기반으로 실적 보고서를 수치화하고, 이를 차년도 심화 과정 설계의 근거로 적용했습니다.</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- 연간 운영 실적 데이터 그리드 -->
-                        <div class="education-data-wrap">
-                            <div class="ach-sub-title" style="color: var(--emerald); margin-bottom: 8px;">2025년 교육 운영 실적 정량 분석</div>
-                            <div style="overflow-x: auto;">
-                                <table class="edu-table">
-                                    <thead>
-                                        <tr>
-                                            <th>과정명</th>
-                                            <th>인원</th>
-                                            <th>차수</th>
-                                            <th>만족도 평점</th>
-                                            <th>데이터 분석 성과 및 비고</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="badge-td">생성형 AI 교육</td>
-                                            <td>120명</td>
-                                            <td>5차수</td>
-                                            <td class="highlight-td">4.29 / 5.0</td>
-                                            <td>사전 자가평가 1.0 ➔ 사후 2.9 급증 (4개 지표 평균, 3점 만점)</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="badge-td" style="border-color: rgba(16, 185, 129, 0.3); color: var(--emerald); background: rgba(16, 185, 129, 0.1);">리텐션 교육</td>
-                                            <td>16명</td>
-                                            <td>1차수</td>
-                                            <td class="highlight-td">4.53 / 5.0</td>
-                                            <td>실습 중심 운영, 현업 적응 의지 및 직무 만족도의 유의미한 향상 확인</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+</div>
         </div>
     </section>
 
@@ -388,12 +537,62 @@
                     </div>
                 </div>
             </div>
+
+            <!-- People Analytics 기술 스택 상세 (인터랙티브 칩 보드) -->
+            <div class="tech-stack-board reveal">
+                <h3 class="tech-board-title">인사 분석 실무 기술 & 라이브러리 스택</h3>
+                <div class="tech-board-grid">
+                    <!-- 언어 및 핵심 도구 -->
+                    <div class="tech-group-card">
+                        <h5>CORE & LANGUAGE</h5>
+                        <div class="tech-chips-list">
+                            <span class="tech-chip" data-desc="Pandas / NumPy를 연계하여 복잡한 인사 통계 처리 및 대용량 근태 로그 정제 수행.">Python</span>
+                            <span class="tech-chip" data-desc="사내 인사시스템(ERP)의 SQL 쿼리를 튜닝하여 5개년 급여 연간 분석 소요시간을 획기적으로 개선.">SQL (DML/DDL)</span>
+                            <span class="tech-chip" data-desc="엑셀 4대 정산 서식 및 대량 급여 지급 대장 출력을 원클릭 매크로로 자동화.">Excel VBA / Macro</span>
+                        </div>
+                    </div>
+
+                    <!-- 데이터 처리 및 통계 -->
+                    <div class="tech-group-card">
+                        <h5>ANALYSIS & STATISTICS</h5>
+                        <div class="tech-chips-list">
+                            <span class="tech-chip" data-desc="600명 임직원의 이종 데이터(근태, 급여, 성과)를 결합하고 정밀 EDA 수행.">Pandas / NumPy</span>
+                            <span class="tech-chip" data-desc="직원 만족도 조사(eNPS) 설문의 Likert 5점 척도 데이터와 이탈율 간 상관분석, 회귀 모델링 수행.">Statsmodels / SciPy</span>
+                            <span class="tech-chip" data-desc="동종 업계 표준 연봉 테이블(Job Grade) 대비 자사 임금 경쟁력을 백분위수 및 사분위수로 계량화.">Descriptive Stats</span>
+                        </div>
+                    </div>
+
+                    <!-- 머신러닝 & 이탈 예측 -->
+                    <div class="tech-group-card">
+                        <h5>MACHINE LEARNING</h5>
+                        <div class="tech-chips-list">
+                            <span class="tech-chip" data-desc="K-Means 군집 분석을 통해 사내 고성과자 집단의 성격별 세그먼테이션 수행.">Scikit-Learn</span>
+                            <span class="tech-chip" data-desc="인적 요인(야근, 연차, 성과 등)을 학습시켜 핵심 인재의 조기 퇴사 위험도(Risk Gauge) 사전 분류.">Predictive Modeling</span>
+                        </div>
+                    </div>
+
+                    <!-- 시각화 & BI -->
+                    <div class="tech-group-card">
+                        <h5>VISUALIZATION & BI</h5>
+                        <div class="tech-chips-list">
+                            <span class="tech-chip" data-desc="DAX 함수와 관계형 모델링을 통해 경영진 전용 실시간 HR KPI 대시보드 구축.">PowerBI Desktop</span>
+                            <span class="tech-chip" data-desc="상권 매출 및 입지 MPI 스코어를 서울 행정동 맵 레이어에 히트맵 형태로 결합 시각화.">Leaflet.js / Folium</span>
+                            <span class="tech-chip" data-desc="퇴사 추이 시각화 및 부서별 연장 근로 누적 패턴을 HSL 다크 네온 차트로 드로잉.">Seaborn / Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 칩 설명 뷰어 (실시간 출력) -->
+                <div class="tech-desc-viewer" id="techDescViewer">
+                    <span class="viewer-placeholder">칩에 마우스를 올리거나 터치하면 Kim Min-su의 HR 실무 데이터 분석 활용법이 표시됩니다.</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- 프로젝트 상세 섹션 (탭 적용) -->
     <section id="project" class="reveal">
-        <div class="container">
+<div class="container">
             <div class="section-header">
                 <span class="section-tag">대표 프로젝트</span>
                 <h2 class="section-title">데이터 분석 <span>사례 연구</span></h2>
@@ -444,11 +643,58 @@
                             </ul>
                         </div>
                         <div class="proj-tab-visual">
-                            <div class="vis-concept-box">
-                                <p style="color: var(--cyan); font-weight: 700; margin-bottom: 10px;">📐 표준화 가중치 수식</p>
-                                <p>MPI = α * Normal(Sales) + β * Normal(FootTraffic)</p>
-                                <p>Normal(X) = (X - X_min) / (X_max - X_min) * 10</p>
-                                <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 10px;">* 가중치(α, β)는 상권 특성에 맞춰 조절 가능한 모델로 설계.</p>
+                            <!-- 대화형 MPI 가중치 시뮬레이터 -->
+                            <div class="mpi-simulator-box">
+                                <h5 class="widget-sub-title">가중치 제어 MPI 시뮬레이터</h5>
+                                
+                                <div class="widget-control-group">
+                                    <div class="widget-control-label">
+                                        <span>매출액 가중치 (Sales Weight, α)</span>
+                                        <span class="widget-control-val" id="salesWeightVal">5</span>
+                                    </div>
+                                    <input type="range" id="salesWeight" min="0" max="10" step="1" value="5" class="sim-slider sales-slider">
+                                </div>
+
+                                <div class="widget-control-group">
+                                    <div class="widget-control-label">
+                                        <span>유동인구 가중치 (Traffic Weight, β)</span>
+                                        <span class="widget-control-val" id="trafficWeightVal">5</span>
+                                    </div>
+                                    <input type="range" id="trafficWeight" min="0" max="10" step="1" value="5" class="sim-slider traffic-slider">
+                                </div>
+
+                                <div class="mpi-results-list">
+                                    <!-- 가산동 -->
+                                    <div class="mpi-res-item">
+                                        <div class="mpi-item-header">
+                                            <span class="mpi-item-name">가산동 상권</span>
+                                            <span class="mpi-item-score"><strong id="scoreGasan">8.50</strong> / 10</span>
+                                        </div>
+                                        <div class="mpi-score-bar-bg">
+                                            <div class="mpi-score-bar-fill cyan" id="barGasan" style="width: 85.0%;"></div>
+                                        </div>
+                                    </div>
+                                    <!-- 강남역 -->
+                                    <div class="mpi-res-item">
+                                        <div class="mpi-item-header">
+                                            <span class="mpi-item-name">강남역 상권</span>
+                                            <span class="mpi-item-score"><strong id="scoreGangnam">9.65</strong> / 10</span>
+                                        </div>
+                                        <div class="mpi-score-bar-bg">
+                                            <div class="mpi-score-bar-fill purple" id="barGangnam" style="width: 96.5%;"></div>
+                                        </div>
+                                    </div>
+                                    <!-- 홍대입구 -->
+                                    <div class="mpi-res-item">
+                                        <div class="mpi-item-header">
+                                            <span class="mpi-item-name">홍대입구 상권</span>
+                                            <span class="mpi-item-score"><strong id="scoreHongdae">8.85</strong> / 10</span>
+                                        </div>
+                                        <div class="mpi-score-bar-bg">
+                                            <div class="mpi-score-bar-fill emerald" id="barHongdae" style="width: 88.5%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -462,22 +708,65 @@
                             <ul>
                                 <li><strong>3-Track 타깃 입지 전략 도출</strong>: 오피스 밀집형(투자회수 18~24개월), 주거 배달 집중형(투자회수 12~15개월), 혼합 브랜드형(투자회수 24~36개월)으로 카테고리를 명확히 분리 제공.</li>
                                 <li><strong>실전 추천 행정동 산출</strong>: (예: 가산동 상권은 4,299억의 막강한 매출 파워를 보유하여 '저단가 고회전 배달/테이크아웃 모델'에 극대화됨을 수식 증명).</li>
-                                <li><strong>인터랙티브 맵 솔루션 프로토타입</strong>: Leaflet.js 프레임워크를 연동하여 지도 상에서 상권별 MPI를 히트맵 형태로 실시간 모니터링 가능한 반응형 맵 및 창업 의사결정 챗봇 모형 설계.</li>
+                                <li><strong>인터랙티브 맵 솔루션 프로토타입</strong>: Leaflet.js 프레임워크를 연동하여 지도 상에서 상권별 MPI를 히트맵 형태로 모니터링 가능한 반응형 맵 및 창업 의사결정 챗봇 모형 설계.</li>
                             </ul>
                         </div>
                         <div class="proj-tab-visual">
-                            <div class="vis-card-metric">
-                                <div class="v-metric">
-                                    <div class="v-lbl">오피스 상권 투자회수 기간</div>
-                                    <div class="v-val highlight">18 - 24 개월</div>
+                            <!-- 인터랙티브 맵 모형 위젯 -->
+                            <div class="map-simulation-box">
+                                <h5 class="widget-sub-title">서울 주요 상권 데이터 맵 모형 (클릭)</h5>
+                                
+                                <div class="seoul-map-svg-wrap">
+                                    <svg class="seoul-map-svg" viewBox="0 0 400 300">
+                                        <!-- 서울시 가상 아웃라인 및 상권 노드 연결선 -->
+                                        <path d="M 80,180 Q 150,120 200,90 T 320,130" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="2"></path>
+                                        <path d="M 80,180 Q 200,220 320,130" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="2"></path>
+                                        <path d="M 200,90 L 210,180" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="2"></path>
+                                        
+                                        <!-- 강남역 노드 연결선 -->
+                                        <line x1="80" y1="180" x2="210" y2="180" stroke="rgba(0, 242, 254, 0.05)" stroke-dasharray="4,4"></line>
+                                        <line x1="210" y1="180" x2="320" y2="130" stroke="rgba(0, 242, 254, 0.05)" stroke-dasharray="4,4"></line>
+                                        
+                                        <!-- 가산동 (Left-Bottom Node) -->
+                                        <g class="map-node-group active" id="nodeGasan">
+                                            <circle cx="80" cy="180" r="16" class="map-node-glow cyan"></circle>
+                                            <circle cx="80" cy="180" r="6" class="map-node-core cyan"></circle>
+                                            <text x="80" y="210" text-anchor="middle" class="map-node-label">가산동</text>
+                                        </g>
+
+                                        <!-- 홍대입구 (Top-Center Node) -->
+                                        <g class="map-node-group" id="nodeHongdae">
+                                            <circle cx="200" cy="90" r="16" class="map-node-glow emerald"></circle>
+                                            <circle cx="200" cy="90" r="6" class="map-node-core emerald"></circle>
+                                            <text x="200" y="70" text-anchor="middle" class="map-node-label">홍대입구</text>
+                                        </g>
+
+                                        <!-- 강남역 (Right-Bottom Node) -->
+                                        <g class="map-node-group" id="nodeGangnam">
+                                            <circle cx="320" cy="130" r="16" class="map-node-glow purple"></circle>
+                                            <circle cx="320" cy="130" r="6" class="map-node-core purple"></circle>
+                                            <text x="320" y="110" text-anchor="middle" class="map-node-label">강남역</text>
+                                        </g>
+                                    </svg>
                                 </div>
-                                <div class="v-metric">
-                                    <div class="v-lbl">배달 상권 투자회수 기간</div>
-                                    <div class="v-val emerald">12 - 15 개월</div>
-                                </div>
-                                <div class="v-metric" style="grid-column: 1 / span 2;">
-                                    <div class="v-lbl">추천 행정동 예시</div>
-                                    <div class="v-val" style="font-size: 1.1rem; font-weight: 600;">서울시 가산동 (4,299억 매출 상권)</div>
+
+                                <!-- 상권 디테일 카드 (지도를 가리지 않도록 하단으로 배치 분리) -->
+                                <div class="map-detail-card" id="mapDetailCard">
+                                    <div class="map-detail-header">
+                                        <span class="map-detail-badge" id="mapDetailTrack">배달 집중형</span>
+                                        <h6 id="mapDetailTitle">가산동 상권</h6>
+                                    </div>
+                                    <div class="map-detail-body">
+                                        <div class="map-detail-metric">
+                                            <span class="detail-m-lbl">MPI 스코어</span>
+                                            <span class="detail-m-val cyan" id="mapDetailMpi">8.50 / 10</span>
+                                        </div>
+                                        <div class="map-detail-metric">
+                                            <span class="detail-m-lbl">예상 회수기간</span>
+                                            <span class="detail-m-val" id="mapDetailPayback">12 - 15개월</span>
+                                        </div>
+                                        <p class="map-detail-desc" id="mapDetailDesc">오피스 직장인 배달 배후수요가 극대화된 상권으로, 저단가 고회전 테이크아웃 모델 추천.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -496,11 +785,62 @@
                             </ul>
                         </div>
                         <div class="proj-tab-visual">
-                            <div class="vis-concept-box" style="border-left-color: var(--purple);">
-                                <p style="color: var(--purple); font-weight: 700; margin-bottom: 10px;">💡 HR 실무 적용 시나리오</p>
-                                <p>1. 부서별 이탈 위험 지수 (Attrition Index) 설계</p>
-                                <p>2. 사내 리더십 다차원 격자 매트릭스 매핑</p>
-                                <p>3. 인건비 시나리오별 투자효과(ROI) 시뮬레이션</p>
+                            <!-- HR Attrition Risk 계산기 -->
+                            <div class="hr-risk-box">
+                                <h5 class="widget-sub-title">사내 이탈 취약성 (Attrition Risk) 진단기</h5>
+                                
+                                <div class="risk-checkbox-list">
+                                    <label class="risk-check-item">
+                                        <input type="checkbox" id="riskSalary" checked>
+                                        <span class="risk-check-custom"></span>
+                                        <div class="risk-check-text">
+                                            <span class="risk-title-sub">시장 대비 보상 경쟁력 저하</span>
+                                            <span class="risk-score-addon">+25%</span>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="risk-check-item">
+                                        <input type="checkbox" id="riskOvertime" checked>
+                                        <span class="risk-check-custom"></span>
+                                        <div class="risk-check-text">
+                                            <span class="risk-title-sub">월 야근 시간 40시간 초과 (지속)</span>
+                                            <span class="risk-score-addon">+30%</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="risk-check-item">
+                                        <input type="checkbox" id="riskVacation">
+                                        <span class="risk-check-custom"></span>
+                                        <div class="risk-check-text">
+                                            <span class="risk-title-sub">연차 소진율 30% 미만 (피로 누적)</span>
+                                            <span class="risk-score-addon">+15%</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="risk-check-item">
+                                        <input type="checkbox" id="riskTurnover">
+                                        <span class="risk-check-custom"></span>
+                                        <div class="risk-check-text">
+                                            <span class="risk-title-sub">동료 조기 이탈 발생 (팀 이탈 전염)</span>
+                                            <span class="risk-score-addon">+20%</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="hr-risk-gauge-container">
+                                    <div class="hr-gauge-label-row">
+                                        <span>이탈 취약성 지수</span>
+                                        <span class="hr-gauge-score-val" id="hrRiskScore">55%</span>
+                                    </div>
+                                    <div class="hr-gauge-bar-bg">
+                                        <div class="hr-gauge-bar-fill" id="hrRiskBar" style="width: 55%; background: var(--purple);"></div>
+                                    </div>
+                                    
+                                    <div class="hr-prescription-box" id="hrPrescription">
+                                        <span class="pres-status-badge yellow" id="hrPresStatus">주의 (Caution)</span>
+                                        <p class="pres-desc" id="hrPresDesc">핵심 요인이 복합 작용 중입니다. 해당 부서 리더 면담을 트리거하고 보상 체계 개별 리포트 검토가 권장됩니다.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -508,7 +848,7 @@
 
             </div>
         </div>
-    </section>
+</section>
 
     <!-- 향후 커리어 지향점 -->
     <section id="direction" class="reveal">
@@ -561,10 +901,54 @@
                     안정적인 HR 운영 인프라 구축에 동참할 준비가 되어 있습니다.
                 </p>
                 
-                <div class="email-box" id="emailBox">
-                    <span class="email-address">jopss1001@gmail.com</span>
-                    <span class="email-copy-icon">📋</span>
-                    <div class="toast-msg" id="toastMsg">복사 완료!</div>
+                <div class="email-wrapper">
+                    <div class="email-box" id="emailBox" title="클릭하여 이메일 주소 복사">
+                        <span class="email-copy-badge">
+                            <svg class="copy-badge-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            <span>이메일 복사</span>
+                        </span>
+                        <span class="email-address">jopss1001@gmail.com</span>
+                    </div>
+                    <div class="toast-msg" id="toastMsg">복사되었습니다</div>
+                </div>
+
+                <!-- 실시간 10초 퀵 커피챗 제안 폼 -->
+                <div class="quick-chat-container">
+                    <div class="quick-chat-title">10초 퀵 커피챗 제안 (모의 전송)</div>
+                    <form id="coffeeChatForm" class="quick-chat-form">
+                        <div class="form-row-grid">
+                            <div class="form-group">
+                                <input type="text" id="chatSender" placeholder="성함 또는 기업명" required class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="chatContact" placeholder="연락처 또는 이메일" required class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select id="chatPurpose" class="form-select" required>
+                                <option value="" disabled selected>제안 목적 선택</option>
+                                <option value="채용 및 인사 상담">💼 채용/이직 제안</option>
+                                <option value="커피챗 대화">☕ 커피챗 제안</option>
+                                <option value="협업 및 외주 의뢰">⚡ 프로젝트 협업</option>
+                                <option value="단순 업무 교류">🤝 단순 실무 네트워킹</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="chatMessage" placeholder="간단한 제안 메시지를 적어주세요..." required class="form-textarea" rows="2"></textarea>
+                        </div>
+                        <button type="submit" id="btnSubmitChat" class="btn btn-primary form-submit-btn">
+                            <span class="btn-text">제안서 즉시 발송하기 🚀</span>
+                            <span class="btn-spinner" style="display: none;">전송 중... ⚡</span>
+                        </button>
+                    </form>
+                    
+                    <!-- 전송 완료 피드백 (기본 숨김) -->
+                    <div id="chatSuccessPanel" class="chat-success-panel" style="display: none;">
+                        <span class="success-icon">☕</span>
+                        <h4 class="success-title">소중한 커피챗 제안이 안전하게 접수되었습니다!</h4>
+                        <p class="success-desc">김민수 님께 제안 내역이 모의 전달되었습니다. 확인 후 남겨주신 이메일/연락처로 성심성의껏 답변드리겠습니다. 감사합니다!</p>
+                        <button type="button" id="btnResetChat" class="btn btn-secondary btn-sm" style="margin-top: 12px; padding: 6px 14px; font-size: 0.8rem;">새 제안서 보내기</button>
+                    </div>
                 </div>
             </div>
         </div>
