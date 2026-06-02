@@ -1523,22 +1523,22 @@ footer p span {
     
     .tech-capability-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: 1fr !important;
         gap: 12px !important;
     }
     .tech-capability-grid .credential-item {
-        padding: 16px 14px !important;
-        gap: 12px !important;
+        padding: 16px !important;
+        gap: 16px !important;
     }
     .tech-capability-grid .credential-item:last-child {
-        grid-column: span 2;
+        grid-column: span 1 !important;
     }
     .tech-capability-grid .credential-item h4 {
-        font-size: 0.85rem !important;
+        font-size: 0.95rem !important;
     }
     .tech-capability-grid .credential-item p {
-        font-size: 0.75rem !important;
-        line-height: 1.4 !important;
+        font-size: 0.8rem !important;
+        line-height: 1.45 !important;
     }
 
     .direction-grid {
