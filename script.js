@@ -883,7 +883,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Run once on load to highlight current section
     scrollSpy();
 
-    // 8. 10-Second Quick Coffee Chat Proposal Form Mock Engine
+    // 8. 10-Second Quick Coffee Chat Proposal Form real mailto engine
     const coffeeChatForm = document.getElementById('coffeeChatForm');
     const chatSuccessPanel = document.getElementById('chatSuccessPanel');
     const btnSubmitChat = document.getElementById('btnSubmitChat');
@@ -903,8 +903,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 btnSubmitChat.disabled = true;
             }
             
-            // Mock server latency (1.2 seconds)
+            // Mock processing delay (1.2 seconds) before triggering mailto
             setTimeout(() => {
+                // Extract values
+                const sender = document.getElementById('chatSender').value;
+                const contact = document.getElementById('chatContact').value;
+                const purpose = document.getElementById('chatPurpose').value;
+                const message = document.getElementById('chatMessage').value;
+                
+                // Format subject and body for the email draft
+                const subject = `[커피챗 제안] ${purpose} - ${sender}님`;
+                const body = `안녕하세요, 김민수님.\n\n포트폴리오를 통해 커피챗을 제안합니다.\n\n[제안 정보]\n- 제안 목적: ${purpose}\n- 제안자: ${sender}\n- 연락처/이메일: ${contact}\n\n[제안 메시지]\n${message}\n\n감사합니다.`;
+                
                 // Hide form and show success panel with smooth transit
                 coffeeChatForm.style.display = 'none';
                 chatSuccessPanel.style.display = 'flex';
@@ -917,6 +927,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     btnSpinner.style.display = 'none';
                     btnSubmitChat.disabled = false;
                 }
+
+                // Trigger mailto client
+                const mailtoUrl = `mailto:jopss1001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoUrl;
             }, 1200);
         });
     }
@@ -948,36 +962,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 10. Tech Stack Interactive Description Viewer Logic
-    const techChips = document.querySelectorAll('.tech-chip');
-    const techDescViewer = document.getElementById('techDescViewer');
-    
-    if (techChips && techDescViewer) {
-        const placeholderText = techDescViewer.innerHTML; // Store placeholder
-        
-        techChips.forEach(chip => {
-            const showDesc = () => {
-                const desc = chip.dataset.desc;
-                techDescViewer.innerHTML = `<strong>[${chip.textContent}]</strong> ${desc}`;
-                techDescViewer.classList.add('active');
-            };
-            
-            const resetDesc = () => {
-                techDescViewer.innerHTML = placeholderText;
-                techDescViewer.classList.remove('active');
-            };
-            
-            // Mouse hover support
-            chip.addEventListener('mouseenter', showDesc);
-            chip.addEventListener('mouseleave', resetDesc);
-            
-            // Mobile touch support
-            chip.addEventListener('touchstart', (e) => {
-                e.preventDefault();
-                showDesc();
-            });
-        });
-    }
+
 });
 
 // 5. Project Tab Switching Function (Global scope for onclick bindings)
