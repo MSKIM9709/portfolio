@@ -1696,6 +1696,18 @@ footer p span {
     .email-address {
         font-size: 0.85rem !important;
     }
+
+    /* 회사 경력 카드 모바일 최적화 */
+    .work-meta {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        padding: 20px !important;
+    }
+    .work-period {
+        text-align: left !important;
+        width: 100% !important;
+    }
 }
 
 /* ==========================================================================
