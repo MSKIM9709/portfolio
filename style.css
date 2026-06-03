@@ -2113,9 +2113,10 @@ input:checked + .slider-toggle:before {
     color: var(--text-muted);
     margin-top: 4px;
     margin-bottom: 8px;
-    white-space: nowrap;
     display: inline-flex;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 6px;
     vertical-align: middle;
 }
 
@@ -2124,7 +2125,7 @@ input:checked + .slider-toggle:before {
     font-size: 0.72rem;
     font-weight: 700;
     color: var(--cyan);
-    margin-left: 6px;
+    /* margin-left handled by gap */
     background: rgba(0, 242, 254, 0.08);
     border: 1px solid rgba(0, 242, 254, 0.2);
     padding: 0 6px;
@@ -2149,7 +2150,7 @@ input:checked + .slider-toggle:before {
 
 .card-formula {
     margin: 8px 0;
-    padding: 5px 8px;
+    padding: 6px 10px;
     background: rgba(0, 0, 0, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.04);
     border-radius: 6px;
@@ -2157,8 +2158,9 @@ input:checked + .slider-toggle:before {
     font-size: 0.7rem;
     color: var(--text-secondary);
     line-height: 1.4;
-    white-space: nowrap;
-    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .card-formula .math-expr span {
@@ -2167,9 +2169,8 @@ input:checked + .slider-toggle:before {
 }
 
 .formula-breakdown {
-    display: inline-block;
+    display: block;
     color: var(--text-muted);
-    margin-left: 10px;
     font-size: 0.65rem;
 }
 
