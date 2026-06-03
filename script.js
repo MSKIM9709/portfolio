@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (headcountNum && headcountInput) headcountNum.value = headcountInput.value;
 
         // Wage Constants
-        const BONUS_AMT = 1000000;
+        const BONUS_AMT = 3600000;
         const MEAL_AMT = 200000;
         const HOLIDAY_AMT = 1000000;
         const VACATION_AMT = 800000;

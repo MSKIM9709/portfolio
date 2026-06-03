@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>경력 포트폴리오 | 김민수 (데이터 기반 HR 의사결정 전문가)</title>
     <meta name="description" content="HR 실무 경력에 데이터 분석 및 자동화 역량을 결합하여 신속하고 타당한 의사결정을 이끌어내는 HR 전문가 김민수입니다.">
-    <link rel="stylesheet" href="style.css?v=1.0.8">
+    <link rel="stylesheet" href="style.css?v=1.0.9">
 </head>
 <body>
     <!-- 스크롤 진행 표시 바 -->
@@ -58,7 +58,7 @@
                         <span class="kpi-title">HR 실무 경력</span>
                     </div>
                     <div class="kpi-body">
-                        <span class="kpi-val">5 년차</span>
+                        <span class="kpi-val">5년차</span>
                         <span class="kpi-change">제조 중견</span>
                     </div>
                     <p class="kpi-desc">채용·급여·교육 전반 HR 운영 실무</p>
@@ -80,7 +80,7 @@
                         <span class="kpi-title">임금 분석 규모</span>
                     </div>
                     <div class="kpi-body">
-                        <span class="kpi-val">470 명</span>
+                        <span class="kpi-val">470명</span>
                     </div>
                     <p class="kpi-desc">대법원 판결에 따른 통상임금 계산 시뮬레이터 구축</p>
                 </div>
@@ -182,7 +182,7 @@
                 </div>
                 <div class="work-period">
                     <span class="badge">재직 중</span>
-                    <div class="dates">2022.04 ~ 현재 (5년차 / 만 4년 2개월)</div>
+                    <div class="dates">2022.04 ~ 현재 (5년 차 · 만 4년 2개월)</div>
                 </div>
             </div>
             
@@ -237,14 +237,14 @@
                     
                     <div class="achievement-body">
                         <div class="ach-bg-card">
-                            <div class="ach-sub-title" style="color: var(--emerald);">배경 및 문제 분석</div>
+                            <div class="ach-sub-title">배경 및 문제 분석</div>
                             <p>
                                 2024년 12월 대법원 전원합의체 판결로 통상임금의 '고정성' 요건이 대폭 완화 및 조정되었습니다. 이에 따라 회사 임금체계 내 신규로 통상임금에 포함될 가능성이 높은 수당 4개 항목이 실시간 인건비 및 향후 법적 리스크에 미치는 영향력을 즉각 산정해야 했습니다.
                             </p>
                         </div>
                         
                         <div class="ach-action-card">
-                            <div class="ach-sub-title" style="color: var(--emerald);">수행 내용 및 해결 방안</div>
+                            <div class="ach-sub-title">수행 내용 및 해결 방안</div>
                             <ul>
                                 <li><strong>대용량 통합 분석 시트 설계</strong>: 기술직 470명의 5개월 대용량 실데이터를 정제하고 핸들링할 수 있는 자동 연산 시트를 설계했습니다.</li>
                                 <li><strong>변수 제어 자동 비교</strong>: 기존 고정성이 결여되었던 4개 수당을 동적 변수로 설정하여 포함 여부에 따른 개별/전체 통상임금 시간급 차액을 실시간으로 비교 자동화했습니다.</li>
@@ -345,7 +345,7 @@
                                                 <div class="toggle-info">
                                                     <span class="toggle-name">정기상여</span>
                                                     <span class="toggle-period-badge">연간</span>
-                                                    <span class="toggle-amount">+1,000,000원</span>
+                                                    <span class="toggle-amount">+3,600,000원</span>
                                                 </div>
                                                 <label class="switch">
                                                     <input type="checkbox" id="allowanceBonus" checked>
@@ -409,16 +409,16 @@
                                          <div class="result-card">
                                              <span class="res-label">예상 연장근로수당 <span id="labelOvertimePeriod">(월간 총합)</span></span>
                                              <div class="res-num-wrap">
-                                                 <span class="res-number highlight" id="overtimePay">485,741,616</span>
+                                                 <span class="res-number highlight" id="overtimePay">485,745,000</span>
                                                  <span class="res-unit">원</span>
                                              </div>
                                              <div class="res-comparison">
                                                  <span class="comp-label">변경 전:</span>
                                                  <span class="comp-val" id="beforeOvertime">404,784,774</span>원
-                                                 <span class="comp-diff-val" id="diffOvertime">(+80,956,842원)</span>
+                                                 <span class="comp-diff-val" id="diffOvertime">(+80,960,226원)</span>
                                              </div>
                                              <div class="card-formula">
-                                                 <span class="math-expr">(<span id="f-hourlyWageMultiplier">20,574</span> * <span id="f-overtimeHours">40</span> * 1.5) * <span id="f-headcount">470</span>명<span id="f-periodMultiplier"></span></span>
+                                                 <span class="math-expr">(<span id="f-hourlyWageMultiplier">17,225</span> * <span id="f-overtimeHours">40</span> * 1.5) * <span id="f-headcount">470</span>명<span id="f-periodMultiplier"></span></span>
                                              </div>
                                              <p class="res-desc" id="descOvertime">470명 대상 연장근로 총합</p>
                                          </div>
@@ -444,7 +444,7 @@
                                               <div class="delta-main-header">
                                                   <span class="res-label">통상임금 범위 확대에 따른 총인건비 변동</span>
                                                   <div class="delta-highlights">
-                                                      <span class="delta-value-badge" id="deltaPercent">+5.4% (+175,406,538원)</span>
+                                                      <span class="delta-value-badge" id="deltaPercent">+3.7% (+80,962,200원)</span>
                                                   </div>
                                               </div>
                                               
@@ -452,7 +452,7 @@
                                               <div class="delta-comparison-grid">
                                                   <div class="comparison-block before">
                                                       <div class="comp-block-lbl">산입 전 총인건비</div>
-                                                      <div class="comp-block-val"><span id="baselineTotalCost">3,271,784,774</span><span class="comp-block-unit">원</span></div>
+                                                      <div class="comp-block-val"><span id="baselineTotalCost">2,167,282,800</span><span class="comp-block-unit">원</span></div>
                                                       <div class="comp-block-desc">기존 임금체계 (수당 미산입)</div>
                                                   </div>
                                                   <div class="comparison-arrow-wrap">
@@ -460,7 +460,7 @@
                                                   </div>
                                                   <div class="comparison-block after">
                                                       <div class="comp-block-lbl">산입 후 예상 총인건비</div>
-                                                      <div class="comp-block-val highlight"><span id="totalCost">3,447,191,312</span><span class="comp-block-unit">원</span></div>
+                                                      <div class="comp-block-val highlight"><span id="totalCost">2,248,245,000</span><span class="comp-block-unit">원</span></div>
                                                       <div class="comp-block-desc">쟁점수당 산입 시 법정인건비</div>
                                                   </div>
                                               </div>
@@ -469,7 +469,7 @@
                                               <div class="calculation-breakdown-inline">
                                                    <span class="breakdown-inline-lbl">산출 공식</span>
                                                    <span class="breakdown-inline-expr">
-                                                       [ 기본 <span id="f-totalBase">3,000,000</span> + 고정 <span id="f-totalAllowances">533,333</span> + 연장 <span id="f-totalOvertime">1,234,450</span> ] 원
+                                                       [ 기본 <span id="f-totalBase">3,000,000</span> + 고정 <span id="f-totalAllowances">750,000</span> + 연장 <span id="f-totalOvertime">1,033,500</span> ] 원
                                                        <span class="expr-operator">×</span>
                                                        <span id="f-totalHeadcount">470</span>명<span id="f-totalPeriodMultiplier"></span>
                                                    </span>
@@ -479,10 +479,10 @@
                                               <div class="delta-bar-section">
                                                   <div class="delta-bar-lbl-row">
                                                       <span>기존 대비 인건비 증가율</span>
-                                                      <span class="delta-bar-percent" id="deltaBarPercent">5.4%</span>
+                                                      <span class="delta-bar-percent" id="deltaBarPercent">3.7%</span>
                                                   </div>
                                                   <div class="delta-bar-container">
-                                                      <div class="delta-bar-fill" id="deltaBarFill" style="width: 5.4%;"></div>
+                                                      <div class="delta-bar-fill" id="deltaBarFill" style="width: 14.8%;"></div>
                                                   </div>
                                               </div>
                                               
@@ -989,6 +989,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=1.0.7"></script>
+    <script src="script.js?v=1.0.9"></script>
 </body>
 </html>

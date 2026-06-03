@@ -1514,7 +1514,13 @@ footer p span {
     html { font-size: 14px; }
     .navbar { padding: 16px 0; }
     .navbar .logo { font-size: 1.15rem; }
-    .nav-links { display: none; } /* Could add simplified menu later, but single page scrolling usually okay or simple stack */
+    .nav-links {
+        display: flex;
+        gap: 12px;
+    }
+    .nav-links li:not(:last-child) {
+        display: none;
+    }
     
     .hero-grid { grid-template-columns: 1fr; }
     .hero { padding-top: 140px; min-height: auto; padding-bottom: 80px; }
