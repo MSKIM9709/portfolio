@@ -2165,6 +2165,13 @@ input:checked + .slider-toggle:before {
     font-weight: 700;
 }
 
+.formula-breakdown {
+    display: inline-block;
+    color: var(--text-muted);
+    margin-left: 10px;
+    font-size: 0.65rem;
+}
+
 /* 실시간 계산 공식 패널 스타일 */
 .wage-formulas-panel {
     background: rgba(11, 17, 32, 0.6) !important;
@@ -3796,4 +3803,51 @@ input:checked + .slider-toggle:before {
         gap: 6px !important;
         align-items: center !important;
     }
+}
+
+/* Map Zoom Controls styling */
+.map-zoom-controls {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 10;
+}
+
+.zoom-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(11, 17, 32, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+}
+
+.zoom-btn:hover {
+    background: var(--cyan);
+    color: #060913;
+    border-color: var(--cyan);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+}
+
+.map-ctrl-guide {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    background: rgba(11, 17, 32, 0.6);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    pointer-events: none;
 }

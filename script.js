@@ -243,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const HOLIDAY_AMT = 1000000;
         const VACATION_AMT = 800000;
         const TRANS_AMT = 100000;
-        const FIXED_ALLOWANCES_PAID = BONUS_AMT + MEAL_AMT + HOLIDAY_AMT + VACATION_AMT + TRANS_AMT; // 3,100,000 KRW (Paid anyway)
 
         function formatNumber(num) {
             return Math.round(num).toLocaleString('ko-KR');
@@ -317,6 +316,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update formula panel in DOM
             if (fBaseSalary) fBaseSalary.textContent = formatNumber(baseSalary);
             if (fAllowances) fAllowances.textContent = formatNumber(includedAllowances);
+            
+            const formulaBreakdownEl = document.getElementById('formulaBreakdown');
+            if (formulaBreakdownEl) {
+                const breakdownParts = [];
+                if (allowanceMeal && allowanceMeal.checked) breakdownParts.push("식대 20만");
+                if (allowanceTrans && allowanceTrans.checked) breakdownParts.push("교통 10만");
+                if (allowanceBonus && allowanceBonus.checked) breakdownParts.push("상여 30만");
+                if (allowanceHoliday && allowanceHoliday.checked) breakdownParts.push("명절 8.3만");
+                if (allowanceVacation && allowanceVacation.checked) breakdownParts.push("휴가 6.7만");
+                formulaBreakdownEl.textContent = breakdownParts.length > 0 ? `(${breakdownParts.join(' + ')})` : '(산입 수당 없음)';
+            }
             if (fHourlyWage) fHourlyWage.textContent = formatNumber(hourlyWage);
             if (fHourlyWageMultiplier) fHourlyWageMultiplier.textContent = formatNumber(hourlyWage);
             if (fOvertimeHours) fOvertimeHours.textContent = overtimeHours;
@@ -698,17 +708,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 seoulMapSvg.style.transform = `translate(${mapPanX}px, ${mapPanY}px) scale(${mapZoom})`;
             };
 
-            // 마우스 휠을 통한 줌(Zoom)
+            // 마우스 휠을 통한 줌(Zoom) - Ctrl 키를 누른 상태에서만 작동하도록 하여 스크롤 막힘 방지
             seoulMapSvg.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                const zoomStep = 0.1;
-                if (e.deltaY < 0) {
-                    mapZoom = Math.min(mapZoom + zoomStep, 3.0); // 최대 3배 줌
-                } else {
-                    mapZoom = Math.max(mapZoom - zoomStep, 0.7); // 최소 0.7배 축소
+                if (e.ctrlKey) {
+                    e.preventDefault();
+                    const zoomStep = 0.1;
+                    if (e.deltaY < 0) {
+                        mapZoom = Math.min(mapZoom + zoomStep, 3.0); // 최대 3배 줌
+                    } else {
+                        mapZoom = Math.max(mapZoom - zoomStep, 0.7); // 최소 0.7배 축소
+                    }
+                    updateMapTransform();
                 }
-                updateMapTransform();
             }, { passive: false });
+
+            // 줌 버튼 클릭 이벤트
+            const btnMapZoomIn = document.getElementById('btnMapZoomIn');
+            const btnMapZoomOut = document.getElementById('btnMapZoomOut');
+            const btnMapZoomReset = document.getElementById('btnMapZoomReset');
+            
+            if (btnMapZoomIn) {
+                btnMapZoomIn.addEventListener('click', () => {
+                    mapZoom = Math.min(mapZoom + 0.2, 3.0);
+                    updateMapTransform();
+                });
+            }
+            if (btnMapZoomOut) {
+                btnMapZoomOut.addEventListener('click', () => {
+                    mapZoom = Math.max(mapZoom - 0.2, 0.7);
+                    updateMapTransform();
+                });
+            }
+            if (btnMapZoomReset) {
+                btnMapZoomReset.addEventListener('click', () => {
+                    mapZoom = 1.0;
+                    mapPanX = 0;
+                    mapPanY = 0;
+                    updateMapTransform();
+                });
+            }
 
             // 마우스 드래그를 통한 이동(Pan)
             seoulMapSvg.addEventListener('mousedown', (e) => {
@@ -945,6 +983,23 @@ document.addEventListener('DOMContentLoaded', () => {
             coffeeChatForm.style.display = 'flex';
             coffeeChatForm.style.opacity = '0';
             coffeeChatForm.style.animation = 'fadeIn 0.5s ease forwards';
+        });
+    }
+
+    const btnCopySuccessEmail = document.getElementById('btnCopySuccessEmail');
+    if (btnCopySuccessEmail) {
+        btnCopySuccessEmail.addEventListener('click', () => {
+            navigator.clipboard.writeText('jopss1001@gmail.com').then(() => {
+                const originalText = btnCopySuccessEmail.textContent;
+                btnCopySuccessEmail.textContent = '복사 완료 ✓';
+                btnCopySuccessEmail.style.backgroundColor = 'var(--emerald)';
+                btnCopySuccessEmail.style.borderColor = 'var(--emerald)';
+                setTimeout(() => {
+                    btnCopySuccessEmail.textContent = originalText;
+                    btnCopySuccessEmail.style.backgroundColor = '';
+                    btnCopySuccessEmail.style.borderColor = '';
+                }, 2000);
+            });
         });
     }
 
