@@ -2041,7 +2041,7 @@ input:checked + .slider-toggle:before {
 /* Results Board */
 .result-board {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 12px; /* 조밀한 여백 */
 }
 
@@ -2054,6 +2054,7 @@ input:checked + .slider-toggle:before {
     flex-direction: column;
     justify-content: space-between;
     transition: var(--transition-smooth);
+    min-width: 0; /* grid 아이템 넘침 현상 원천 차단 */
 }
 
 .result-card:hover {
