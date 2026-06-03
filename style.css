@@ -492,6 +492,12 @@ section {
     -webkit-text-fill-color: transparent;
 }
 
+.kpi-card.purple .kpi-val {
+    background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .kpi-change {
     font-family: var(--font-mono);
     font-size: 0.85rem;
