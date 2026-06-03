@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>경력 포트폴리오 | 김민수 (데이터 기반 HR 의사결정 전문가)</title>
     <meta name="description" content="HR 실무 경력에 데이터 분석 및 자동화 역량을 결합하여 신속하고 타당한 의사결정을 이끌어내는 HR 전문가 김민수입니다.">
-    <link rel="stylesheet" href="style.css?v=1.1.0">
+    <link rel="stylesheet" href="style.css?v=1.1.1">
 </head>
 <body>
     <!-- 스크롤 진행 표시 바 -->
@@ -345,7 +345,7 @@
                                                 <div class="toggle-info">
                                                     <span class="toggle-name">정기상여</span>
                                                     <span class="toggle-period-badge">연간</span>
-                                                    <span class="toggle-amount">+3,600,000원 <small style="font-size: 0.75rem; color: var(--text-muted);">(월 30만)</small></span>
+                                                    <span class="toggle-amount">+2,000,000원 <small style="font-size: 0.75rem; color: var(--text-muted);">(월 16.7만)</small></span>
                                                 </div>
                                                 <label class="switch">
                                                     <input type="checkbox" id="allowanceBonus" checked>
@@ -391,7 +391,7 @@
                                          <div class="result-card">
                                              <span class="res-label">통상임금 시급 (1인 기준)</span>
                                              <div class="res-num-wrap">
-                                                 <span class="res-number" id="hourlyWage">17,225</span>
+                                                 <span class="res-number" id="hourlyWage">16,587</span>
                                                  <span class="res-unit">원</span>
                                              </div>
                                              <div class="res-comparison">
@@ -400,8 +400,8 @@
                                                  <span class="comp-diff-val" id="diffHourly">(+2,871원)</span>
                                              </div>
                                              <div class="card-formula">
-                                                 <span class="math-expr">(<span id="f-baseSalary">3,000,000</span> + <span id="f-allowances">600,000</span>) / 209</span>
-                                                 <span class="formula-breakdown" id="formulaBreakdown">(식대 20만 + 교통 10만 + 상여 30만)</span>
+                                                 <span class="math-expr">(<span id="f-baseSalary">3,000,000</span> + <span id="f-allowances">466,667</span>) / 209</span>
+                                                 <span class="formula-breakdown" id="formulaBreakdown">(식대 20만 + 교통 10만 + 상여 16.7만)</span>
                                              </div>
                                              <p class="res-desc">기준시간: 월 209시간 (연간수당 1/12 분할 반영)</p>
                                          </div>
@@ -410,16 +410,16 @@
                                          <div class="result-card">
                                              <span class="res-label">예상 연장근로수당 <span id="labelOvertimePeriod">(월간 총합)</span></span>
                                              <div class="res-num-wrap">
-                                                 <span class="res-number highlight" id="overtimePay">485,745,000</span>
+                                                 <span class="res-number highlight" id="overtimePay">467,753,400</span>
                                                  <span class="res-unit">원</span>
                                              </div>
                                              <div class="res-comparison">
                                                  <span class="comp-label">변경 전:</span>
                                                  <span class="comp-val" id="beforeOvertime">404,784,774</span>원
-                                                 <span class="comp-diff-val" id="diffOvertime">(+80,960,226원)</span>
+                                                 <span class="comp-diff-val" id="diffOvertime">(+62,968,626원)</span>
                                              </div>
                                              <div class="card-formula">
-                                                 <span class="math-expr">(<span id="f-hourlyWageMultiplier">17,225</span> * <span id="f-overtimeHours">40</span> * 1.5) * <span id="f-headcount">470</span>명<span id="f-periodMultiplier"></span></span>
+                                                 <span class="math-expr">(<span id="f-hourlyWageMultiplier">16,587</span> * <span id="f-overtimeHours">40</span> * 1.5) * <span id="f-headcount">470</span>명<span id="f-periodMultiplier"></span></span>
                                              </div>
                                              <p class="res-desc" id="descOvertime">470명 대상 연장근로 총합</p>
                                          </div>
@@ -453,7 +453,7 @@
                                               <div class="delta-comparison-grid">
                                                   <div class="comparison-block before">
                                                       <div class="comp-block-lbl">산입 전 총인건비</div>
-                                                      <div class="comp-block-val"><span id="baselineTotalCost">2,167,282,800</span><span class="comp-block-unit">원</span></div>
+                                                      <div class="comp-block-val"><span id="baselineTotalCost">2,104,616,290</span><span class="comp-block-unit">원</span></div>
                                                       <div class="comp-block-desc">기존 임금체계 (수당 미산입)</div>
                                                   </div>
                                                   <div class="comparison-arrow-wrap">
@@ -461,7 +461,7 @@
                                                   </div>
                                                   <div class="comparison-block after">
                                                       <div class="comp-block-lbl">산입 후 예상 총인건비</div>
-                                                      <div class="comp-block-val highlight"><span id="totalCost">2,248,245,000</span><span class="comp-block-unit">원</span></div>
+                                                      <div class="comp-block-val highlight"><span id="totalCost">2,167,586,890</span><span class="comp-block-unit">원</span></div>
                                                       <div class="comp-block-desc">쟁점수당 산입 시 법정인건비</div>
                                                   </div>
                                               </div>
@@ -470,7 +470,7 @@
                                               <div class="calculation-breakdown-inline">
                                                    <span class="breakdown-inline-lbl">산출 공식</span>
                                                    <span class="breakdown-inline-expr">
-                                                       [ 기본 <span id="f-totalBase">3,000,000</span> + 고정 <span id="f-totalAllowances">750,000</span> + 연장 <span id="f-totalOvertime">1,033,500</span> ] 원
+                                                       [ 기본 <span id="f-totalBase">3,000,000</span> + 고정 <span id="f-totalAllowances">616,667</span> + 연장 <span id="f-totalOvertime">995,220</span> ] 원
                                                        <span class="expr-operator">×</span>
                                                        <span id="f-totalHeadcount">470</span>명<span id="f-totalPeriodMultiplier"></span>
                                                    </span>
@@ -480,10 +480,10 @@
                                               <div class="delta-bar-section">
                                                   <div class="delta-bar-lbl-row">
                                                       <span>기존 대비 인건비 증가율</span>
-                                                      <span class="delta-bar-percent" id="deltaBarPercent">3.7%</span>
+                                                      <span class="delta-bar-percent" id="deltaBarPercent">3.0%</span>
                                                   </div>
                                                   <div class="delta-bar-container">
-                                                      <div class="delta-bar-fill" id="deltaBarFill" style="width: 14.8%;"></div>
+                                                      <div class="delta-bar-fill" id="deltaBarFill" style="width: 12.0%;"></div>
                                                   </div>
                                               </div>
                                               
@@ -990,6 +990,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=1.1.0"></script>
+    <script src="script.js?v=1.1.1"></script>
 </body>
 </html>

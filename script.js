@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (headcountNum && headcountInput) headcountNum.value = headcountInput.value;
 
         // Wage Constants
-        const BONUS_AMT = 3600000;
+        const BONUS_AMT = 2000000;
         const MEAL_AMT = 200000;
         const HOLIDAY_AMT = 1000000;
         const VACATION_AMT = 800000;
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const breakdownParts = [];
                 if (allowanceMeal && allowanceMeal.checked) breakdownParts.push("식대 20만");
                 if (allowanceTrans && allowanceTrans.checked) breakdownParts.push("교통 10만");
-                if (allowanceBonus && allowanceBonus.checked) breakdownParts.push("상여 30만");
+                if (allowanceBonus && allowanceBonus.checked) breakdownParts.push("상여 16.7만");
                 if (allowanceHoliday && allowanceHoliday.checked) breakdownParts.push("명절 8.3만");
                 if (allowanceVacation && allowanceVacation.checked) breakdownParts.push("휴가 6.7만");
                 formulaBreakdownEl.textContent = breakdownParts.length > 0 ? `(${breakdownParts.join(' + ')})` : '(산입 수당 없음)';
