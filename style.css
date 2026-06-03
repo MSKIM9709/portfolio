@@ -2708,6 +2708,35 @@ input:checked + .slider-toggle:before {
         justify-content: center;
         height: 120px;
     }
+
+    /* 시뮬레이터 모바일 잘림 수정 및 최적화 */
+    .control-group {
+        padding: 10px 12px !important;
+        margin-bottom: 8px !important;
+    }
+    .control-label {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+    }
+    .input-sync-wrap {
+        align-self: flex-start !important;
+    }
+    .toggle-item {
+        padding: 6px 10px !important;
+        gap: 8px !important;
+    }
+    .toggle-info {
+        white-space: normal !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+    .toggle-name {
+        font-size: 0.8rem !important;
+    }
+    .toggle-amount {
+        font-size: 0.7rem !important;
+    }
 }
 
 /* ==========================================================================
