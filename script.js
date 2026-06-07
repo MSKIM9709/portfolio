@@ -20,6 +20,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // 1.5 Mobile Navigation Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.querySelector('.nav-links');
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', isOpen);
+            navToggle.textContent = isOpen ? '✕' : '☰';
+        });
+
+        // 메뉴 링크 클릭 시 자동으로 닫기
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.textContent = '☰';
+            });
+        });
+    }
+
     // 2. Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -66,11 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         animateSkillBars();
                     }
                     
-                    // If it's the experience section, animate the premium education dashboard charts
-                    if (entry.target.id === 'experience') {
-                        animateEducationDashboard();
-                    }
-                    
                     observer.unobserve(entry.target);
                 }
             });
@@ -85,21 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
             el.classList.add('active');
         });
         animateSkillBars();
-        animateEducationDashboard();
     }
 
-    // Fallback: 1.2초 후에 아직 active가 안 된 모든 reveal 요소를 강제로 표시 (인앱 브라우저 및 IntersectionObserver 오작동 완벽 보완)
+    // Fallback: 1.2초 후에 아직 active가 안 된 모든 reveal 요소를 강제로 표시
     setTimeout(() => {
         revealElements.forEach(el => {
             if (!el.classList.contains('active')) {
                 el.classList.add('active');
                 
-                // 연동 애니메이션 강제 실행
                 if (el.id === 'analytics') {
                     animateSkillBars();
-                }
-                if (el.id === 'experience') {
-                    animateEducationDashboard();
                 }
             }
         });
@@ -114,58 +125,64 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Circular SVG Gauges and Area Charts Animation for Education Section
-    function animateEducationDashboard() {
-        // Animate SVG circular progress gauges
-        const gauges = document.querySelectorAll('.circular-gauge .gauge-fill');
-        gauges.forEach(gauge => {
-            const percent = parseFloat(gauge.dataset.percent);
-            const radius = gauge.r.baseVal.value; // 40
-            const circumference = 2 * Math.PI * radius; // 251.2
-            const offset = circumference - (percent / 100) * circumference;
-            
-            gauge.style.strokeDasharray = circumference;
-            gauge.style.strokeDashoffset = circumference;
-            
-            setTimeout(() => {
-                gauge.style.strokeDashoffset = offset;
-            }, 100);
+    // 4. Hero Gradient Shift Animation for .highlight text
+    const highlightEl = document.querySelector('.hero-content .highlight');
+    if (highlightEl) {
+        highlightEl.style.backgroundSize = '200% auto';
+        highlightEl.style.animation = 'gradientShift 4s ease infinite';
+    }
+
+    // 4.5 KPI Count-Up Animation
+    function animateCountUp(el, targetText) {
+        // 숫자만 추출 (예: "470명" → 470, "5년차" → 5, "60% ➔ 25%" → skip)
+        const match = targetText.match(/^([\d,]+)/);
+        if (!match) return; // 범위 값은 건너뛰기
+
+        const targetNum = parseInt(match[1].replace(/,/g, ''));
+        const suffix = targetText.replace(match[1], '');
+        const duration = 1500;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // easeOutExpo
+            const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const current = Math.round(eased * targetNum);
+            el.textContent = current.toLocaleString('ko-KR') + suffix;
+            if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+    }
+
+    const kpiVals = document.querySelectorAll('.kpi-val');
+    if (kpiVals.length > 0) {
+        const kpiTargets = [];
+        kpiVals.forEach(el => {
+            kpiTargets.push(el.textContent);
+            // 범위 값(예: 60% ➔ 25%)은 그대로 유지
+            if (!el.classList.contains('range')) {
+                el.textContent = '0';
+            }
         });
 
-        // Animate SVG Line Chart paths (Generative AI Training pre/post)
-        const chartAreas = document.querySelectorAll('.growth-chart .chart-area');
-        const chartLines = document.querySelectorAll('.growth-chart .chart-line');
-        const chartNodes = document.querySelectorAll('.growth-chart .chart-node');
-
-        chartAreas.forEach(area => {
-            const targetPath = area.dataset.path;
-            setTimeout(() => {
-                area.setAttribute('d', targetPath);
-            }, 300);
-        });
-
-        chartLines.forEach(line => {
-            const targetPath = line.dataset.path;
-            setTimeout(() => {
-                line.setAttribute('d', targetPath);
-            }, 300);
-        });
-
-        chartNodes.forEach(node => {
-            setTimeout(() => {
-                node.style.opacity = '1';
-                node.style.transition = 'opacity 0.6s ease';
-            }, 800);
-        });
-
-        // Animate CSS progress bars (Retention Training metrics)
-        const barFills = document.querySelectorAll('.bar-fill');
-        barFills.forEach(bar => {
-            const targetWidth = bar.dataset.width;
-            setTimeout(() => {
-                bar.style.width = targetWidth;
-            }, 500);
-        });
+        // 히어로 섹션이 보이면 카운트업 시작
+        const heroSection = document.getElementById('home');
+        if (heroSection) {
+            const kpiObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        kpiVals.forEach((el, i) => {
+                            if (!el.classList.contains('range')) {
+                                animateCountUp(el, kpiTargets[i]);
+                            }
+                        });
+                        kpiObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            kpiObserver.observe(heroSection);
+        }
     }
 
     // 5. Interactive People Analytics - Wage Simulator Logic

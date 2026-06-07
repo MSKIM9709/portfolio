@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>경력 포트폴리오 | 김민수 (데이터 기반 HR 의사결정 전문가)</title>
     <meta name="description" content="HR 실무 경력에 데이터 분석 및 자동화 역량을 결합하여 신속하고 타당한 의사결정을 이끌어내는 HR 전문가 김민수입니다.">
-    <link rel="stylesheet" href="style.css?v=1.1.7">
+    <link rel="stylesheet" href="style.css?v=1.2.0">
+    <!-- SEO & Social -->
+    <meta property="og:title" content="경력 포트폴리오 | 김민수" />
+    <meta property="og:description" content="HR 실무와 데이터 분석을 융합한 포트폴리오" />
+    <meta property="og:url" content="https://mskim9709.github.io/portfolio/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://mskim9709.github.io/portfolio/" />
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "Person", "name": "김민수", "jobTitle": "HR 실무와 데이터 분석 전문가", "url": "https://mskim9709.github.io/portfolio/", "sameAs": [ "https://github.com/MSKIM9709" ] }
+    </script>
 </head>
+
 <body>
     <!-- 스크롤 진행 표시 바 -->
     <div class="scroll-indicator" id="scrollIndicator"></div>
 
     <!-- 내비게이션 바 -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="container">
             <div class="logo">
                 <span>김민수</span>
@@ -29,628 +40,693 @@
             </ul>
         </div>
     </nav>
+    <main id="main" role="main">
 
-    <!-- 히어로 섹션 -->
-    <header id="home" class="hero">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <div class="hero-tag">
-                    <span></span> 실시간 포트폴리오 2026
-                </div>
-                <h1>
-                    데이터 기반 HR
-                    <span class="highlight">의사결정 전문가</span>
-                </h1>
-                <p class="subtitle">
-                    인사의 직관과 경험을 넘어, <strong>데이터 분석의 정밀함</strong>과 <strong>자동화의 타당성</strong>을 접목하여 의사결정을 돕는 5년 차 실무자 <strong>김민수</strong>입니다.
-                </p>
-                <div class="hero-btns">
-                    <a href="#experience" class="btn btn-primary">성과 및 경력 확인</a>
-                    <a href="#contact" class="btn btn-secondary">커피챗 제안</a>
-                </div>
-            </div>
-            
-            <!-- 히어로 대시보드 지표 (KPI) -->
-            <div class="hero-kpi-board">
-                <div class="kpi-card cyan">
-                    <div class="kpi-header">
-                        <span class="kpi-title">HR 실무 경력</span>
+        <!-- 히어로 섹션 -->
+        <header id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-tag">
+                        <span></span> 실시간 포트폴리오 2026
                     </div>
-                    <div class="kpi-body">
-                        <span class="kpi-val">5년차</span>
-                        <span class="kpi-change">제조 중견</span>
-                    </div>
-                    <p class="kpi-desc">채용·급여·교육 전반 HR 운영 실무</p>
-                </div>
-                
-                <div class="kpi-card emerald">
-                    <div class="kpi-header">
-                        <span class="kpi-title">입사 1년 이내 조기 퇴사율</span>
-                    </div>
-                    <div class="kpi-body">
-                        <span class="kpi-val range">60% ➔ 25%</span>
-                        <span class="kpi-change">(-35%p)</span>
-                    </div>
-                    <p class="kpi-desc">채용 리브랜딩을 통한 신입 조기 이탈률 대폭 개선</p>
-                </div>
-
-                <div class="kpi-card purple">
-                    <div class="kpi-header">
-                        <span class="kpi-title">임금 분석 규모</span>
-                    </div>
-                    <div class="kpi-body">
-                        <span class="kpi-val">470명</span>
-                    </div>
-                    <p class="kpi-desc">대법원 판결에 따른 통상임금 계산 시뮬레이터 구축</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- 소개 섹션 -->
-    <section id="summary" class="reveal">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">인물 개요 / 프로필 요약</span>
-                <h2 class="section-title">HR 실무와 <span>데이터의 융합</span></h2>
-            </div>
-            
-            <div class="summary-grid">
-                <div class="glass-card summary-card">
-                    <h3>인사(HR)의 모든 접점에서 정량적 성과를 축적해 왔습니다.</h3>
-                    <p>
-                        안녕하세요. 제조 중견기업(약 600명 규모) 총무팀에서 <strong>채용, 급여, 근태, 교육</strong> 전반의 HR 운영을 담당해 온 5년 차 실무자 <strong>김민수</strong>입니다. 
+                    <h1>
+                        데이터 기반 HR
+                        <span class="highlight">의사결정 전문가</span>
+                    </h1>
+                    <p class="subtitle">
+                        인사의 직관과 경험을 넘어, <strong>데이터 분석의 정밀함</strong>과 <strong>자동화의 타당성</strong>을 접목하여 의사결정을 돕는 5년 차 실무자
+                        <strong>김민수</strong>입니다.
                     </p>
-                    <p>
-                        단순 운영 업무의 처리에 그치지 않고, <strong>입사 1년 이내 조기 퇴사율 60%에서 25%로 개선</strong>, <strong>기술직 470명 대상 통상임금 시뮬레이션</strong>, <strong>급여 프로세스 클릭 1회 자동화</strong>, <strong>관리직 136명 대상 교육 운영 및 정밀 피드백 측정</strong> 등 항상 데이터에 근거한 문제해결과 운영 효율화를 위해 치열하게 고민했습니다.
-                    </p>
-                    <p>
-                        현재 <strong>빅데이터분석기사(Python)</strong> 및 <strong>경영정보시각화능력(PowerBI)</strong>을 기반으로 <strong>인사 분석(People Analytics)</strong> 영역으로 직무 역량을 가속적으로 확장하여, 더 객관적이고 과학적인 의사결정 시스템을 구축하고 있습니다.
-                    </p>
-                </div>
-                
-                <div class="glass-card philosophy-card">
-                    <div class="philosophy-label">인사 업무 철학</div>
-                    <div class="philosophy-quote">
-                        “인사의 감과 경험에 데이터 분석의 타당성을 입혀 최적의 답을 도출합니다.”
-                    </div>
-                    <div class="philosophy-caption">
-                        경험적 직관의 한계를 극복하고, 신뢰 가능한 데이터 분석 모델을 설계하여 조직이 가장 신속하고 올바른 결정을 내릴 수 있도록 돕습니다.
+                    <div class="hero-btns">
+                        <a href="#experience" class="btn btn-primary">성과 및 경력 확인</a>
+                        <a href="#contact" class="btn btn-secondary">커피챗 제안</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 핵심 역량 섹션 -->
-    <section id="competencies" class="reveal">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">핵심 역량 매트릭스</span>
-                <h2 class="section-title">주요 <span>업무 역량</span></h2>
-            </div>
-            
-            <div class="competency-grid">
-                <!-- 역량 1 -->
-                <div class="glass-card competency-card">
-                    <div class="comp-left">
-                        <h3>HR 운영</h3>
-                        <div class="comp-accent-line cyan"></div>
+                <!-- 히어로 대시보드 지표 (KPI) -->
+                <div class="hero-kpi-board">
+                    <div class="kpi-card cyan">
+                        <div class="kpi-header">
+                            <span class="kpi-title">HR 실무 경력</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span class="kpi-val">5년차</span>
+                            <span class="kpi-change">제조 중견</span>
+                        </div>
+                        <p class="kpi-desc">채용·급여·교육 전반 HR 운영 실무</p>
                     </div>
-                    <div class="comp-right">
-                        <ul>
-                            <li>급여, 원천세 및 4대보험 정산</li>
-                            <li>채용 프로세스 관리</li>
-                            <li>연간 교육 계획 및 운영</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- 역량 2 -->
-                <div class="glass-card competency-card">
-                    <div class="comp-left">
-                        <h3>데이터 분석</h3>
-                        <div class="comp-accent-line emerald"></div>
-                    </div>
-                    <div class="comp-right">
-                        <ul>
-                            <li>빅데이터분석기사 (Python)</li>
-                            <li>경영정보시각화능력 (PowerBI)</li>
-                            <li>급여 및 인건비 시뮬레이션 설계</li>
-                            <li>사내 노후 SQL 시스템 수식 개편</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 경력 및 주요 성과 -->
-    <section id="experience" class="reveal">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">실적 기록</span>
-                <h2 class="section-title">경력 정보 및 <span>핵심 성과</span></h2>
-            </div>
-            
-            <!-- 회사 메타 정보 -->
-            <div class="work-meta">
-                <div class="work-company">
-                    <h3>내화물 제조 중견기업 | 총무팀 / HR 담당</h3>
-                    <p>600여 명 규모 직원 데이터를 다루며 채용·급여·근태·교육 업무 전반을 수행. 운영 효율화와 데이터 기반 의사결정 체계 구축 병행 추진.</p>
+                    <div class="kpi-card emerald">
+                        <div class="kpi-header">
+                            <span class="kpi-title">입사 1년 이내 조기 퇴사율</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span class="kpi-val range">60% ➔ 25%</span>
+                            <span class="kpi-change">(-35%p)</span>
+                        </div>
+                        <p class="kpi-desc">채용 리브랜딩을 통한 신입 조기 이탈률 대폭 개선</p>
+                    </div>
+
+                    <div class="kpi-card purple">
+                        <div class="kpi-header">
+                            <span class="kpi-title">임금 분석 규모</span>
+                        </div>
+                        <div class="kpi-body">
+                            <span class="kpi-val">470명</span>
+                        </div>
+                        <p class="kpi-desc">대법원 판결에 따른 통상임금 계산 시뮬레이터 구축</p>
+                    </div>
                 </div>
-                <div class="work-period">
-                    <div class="dates">2022.04 ~ 현재 (5년 차 · 만 4년 2개월)</div>
-                </div>
             </div>
-            
-            <!-- 성과 리스트 -->
-            <div class="achievements-list">
-                
-                <!-- 성과 1 -->
-                <div class="glass-card achievement-card">
-                    <div class="achievement-index">01</div>
-                    <div class="achievement-header">
-                        <h4>채용 리브랜딩 및 신입사원 조기 퇴사율 개선 프로젝트</h4>
-                        <div class="metric-highlight-box">
-                            <span class="metric-lbl">주요 성과</span>
-                            <span class="metric-val">입사 1년 이내 조기 퇴사율 60% ➔ 25% 감소 (23년 역량고과 A등급)</span>
+        </header>
+
+        <!-- 소개 섹션 -->
+        <section id="summary" class="reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">인물 개요 / 프로필 요약</span>
+                    <h2 class="section-title">HR 실무와 <span>데이터의 융합</span></h2>
+                </div>
+
+                <div class="summary-grid">
+                    <div class="glass-card summary-card">
+                        <h3>인사(HR)의 모든 접점에서 정량적 성과를 축적해 왔습니다.</h3>
+                        <p>
+                            안녕하세요. 제조 중견기업(약 600명 규모) 총무팀에서 <strong>채용, 급여, 근태, 교육</strong> 전반의 HR 운영을 담당해 온 5년 차 실무자
+                            <strong>김민수</strong>입니다.
+                        </p>
+                        <p>
+                            단순 운영 업무의 처리에 그치지 않고, <strong>입사 1년 이내 조기 퇴사율 60%에서 25%로 개선</strong>, <strong>기술직 470명 대상
+                                통상임금 시뮬레이션</strong>, <strong>급여 프로세스 클릭 1회 자동화</strong>, <strong>관리직 136명 대상 교육 운영 및 정밀
+                                피드백 측정</strong> 등 항상 데이터에 근거한 문제해결과 운영 효율화를 위해 치열하게 고민했습니다.
+                        </p>
+                        <p>
+                            현재 <strong>빅데이터분석기사(Python)</strong> 및 <strong>경영정보시각화능력(PowerBI)</strong>을 기반으로 <strong>인사
+                                분석(People Analytics)</strong> 영역으로 직무 역량을 가속적으로 확장하여, 더 객관적이고 과학적인 의사결정 시스템을 구축하고 있습니다.
+                        </p>
+                    </div>
+
+                    <div class="glass-card philosophy-card">
+                        <div class="philosophy-label">인사 업무 철학</div>
+                        <div class="philosophy-quote">
+                            “인사의 감과 경험에 데이터 분석의 타당성을 입혀 최적의 답을 도출합니다.”
+                        </div>
+                        <div class="philosophy-caption">
+                            경험적 직관의 한계를 극복하고, 신뢰 가능한 데이터 분석 모델을 설계하여 조직이 가장 신속하고 올바른 결정을 내릴 수 있도록 돕습니다.
                         </div>
                     </div>
-                    
-                    <div class="achievement-body">
-                        <div class="ach-bg-card">
-                            <div class="ach-sub-title">배경 및 문제 분석</div>
-                            <p>
-                                최근 3년간의 퇴사자 데이터를 면밀히 분석한 결과, 입사 초기의 매니저(사원·대리) 직급 비중이 약 70%에 달했습니다. 처우나 근로 조건은 동종 업계 대비 경쟁력이 충분했으나, 입사 전 회사 및 직무 정보의 불일치(Mismatch)가 조기 이탈의 핵심 유발 요인으로 분석되었습니다.
-                            </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 핵심 역량 섹션 -->
+        <section id="competencies" class="reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">핵심 역량 매트릭스</span>
+                    <h2 class="section-title">주요 <span>업무 역량</span></h2>
+                </div>
+
+                <div class="competency-grid">
+                    <!-- 역량 1 -->
+                    <div class="glass-card competency-card">
+                        <div class="comp-left">
+                            <h3>HR 운영</h3>
+                            <div class="comp-accent-line cyan"></div>
                         </div>
-                        
-                        <div class="ach-action-card">
-                            <div class="ach-sub-title">수행 내용 및 해결 방안</div>
+                        <div class="comp-right">
                             <ul>
-                                <li><strong>채용공고 자체 제작 및 표준화</strong>: 외부 노출되는 채용 공고 디자인을 표준 템플릿화하여 브랜드 인지도와 전문성을 제고했습니다.</li>
-                                <li><strong>직무 소개 페이지 개설</strong>: 계열사 최초로 현직자 인터뷰를 취합하고, 전 부서의 협조를 이끌어내 실무 중심의 베타 사이트 구축 후 최종 검토를 거쳐 오픈했습니다.</li>
+                                <li>급여, 원천세 및 4대보험 정산</li>
+                                <li>채용 프로세스 관리</li>
+                                <li>연간 교육 계획 및 운영</li>
                             </ul>
                         </div>
-                        
-                        <div class="ach-notes-card">
-                            <p>
-                                * 성과 측정 비고: 퇴사율 감소를 오직 직무 소개 페이지의 단독 효과로 단정할 수는 없으나, 동일 기간 내 다른 채용 정책 변화가 거의 없었다는 점과 신규 입사자 대상 면담에서 직무 정보의 충분성에 대한 긍정적인 피드백이 대다수 도출된 점을 미루어 볼 때 유의미한 개선 효과를 얻었다고 평가됩니다.
-                            </p>
+                    </div>
+
+                    <!-- 역량 2 -->
+                    <div class="glass-card competency-card">
+                        <div class="comp-left">
+                            <h3>데이터 분석</h3>
+                            <div class="comp-accent-line emerald"></div>
+                        </div>
+                        <div class="comp-right">
+                            <ul>
+                                <li>빅데이터분석기사 (Python)</li>
+                                <li>경영정보시각화능력 (PowerBI)</li>
+                                <li>급여 및 인건비 시뮬레이션 설계</li>
+                                <li>사내 노후 SQL 시스템 수식 개편</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- 성과 2 -->
-                <div class="glass-card achievement-card emerald">
-                    <div class="achievement-index">02</div>
-                    <div class="achievement-header">
-                        <h4>통상임금 해석 변경에 따른 대규모 임금 분석 도구 구축</h4>
-                        <div class="metric-highlight-box emerald">
-                            <span class="metric-lbl">주요 성과</span>
-                            <span class="metric-val">기술직 470명 실시간 시뮬레이션 환경 확보</span>
+        <!-- 경력 및 주요 성과 -->
+        <section id="experience" class="reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">실적 기록</span>
+                    <h2 class="section-title">경력 정보 및 <span>핵심 성과</span></h2>
+                </div>
+
+                <!-- 회사 메타 정보 -->
+                <div class="work-meta">
+                    <div class="work-company">
+                        <h3>내화물 제조 중견기업 | 총무팀 / HR 담당</h3>
+                        <p>600여 명 규모 직원 데이터를 다루며 채용·급여·근태·교육 업무 전반을 수행. 운영 효율화와 데이터 기반 의사결정 체계 구축 병행 추진.</p>
+                    </div>
+                    <div class="work-period">
+                        <div class="dates">2022.04 ~ 현재 (5년 차 · 만 4년 2개월)</div>
+                    </div>
+                </div>
+
+                <!-- 성과 리스트 -->
+                <div class="achievements-list">
+
+                    <!-- 성과 1 -->
+                    <div class="glass-card achievement-card">
+                        <div class="achievement-index">01</div>
+                        <div class="achievement-header">
+                            <h4>채용 리브랜딩 및 신입사원 조기 퇴사율 개선 프로젝트</h4>
+                            <div class="metric-highlight-box">
+                                <span class="metric-lbl">주요 성과</span>
+                                <span class="metric-val">입사 1년 이내 조기 퇴사율 60% ➔ 25% 감소 (23년 역량고과 A등급)</span>
+                            </div>
+                        </div>
+
+                        <div class="achievement-body">
+                            <div class="ach-bg-card">
+                                <div class="ach-sub-title">배경 및 문제 분석</div>
+                                <p>
+                                    최근 3년간의 퇴사자 데이터를 면밀히 분석한 결과, 입사 초기의 매니저(사원·대리) 직급 비중이 약 70%에 달했습니다. 처우나 근로 조건은 동종 업계
+                                    대비 경쟁력이 충분했으나, 입사 전 회사 및 직무 정보의 불일치(Mismatch)가 조기 이탈의 핵심 유발 요인으로 분석되었습니다.
+                                </p>
+                            </div>
+
+                            <div class="ach-action-card">
+                                <div class="ach-sub-title">수행 내용 및 해결 방안</div>
+                                <ul>
+                                    <li><strong>채용공고 자체 제작 및 표준화</strong>: 외부 노출되는 채용 공고 디자인을 표준 템플릿화하여 브랜드 인지도와 전문성을
+                                        제고했습니다.</li>
+                                    <li><strong>직무 소개 페이지 개설</strong>: 계열사 최초로 현직자 인터뷰를 취합하고, 전 부서의 협조를 이끌어내 실무 중심의 베타
+                                        사이트 구축 후 최종 검토를 거쳐 오픈했습니다.</li>
+                                </ul>
+                            </div>
+
+                            <div class="ach-notes-card">
+                                <p>
+                                    * 성과 측정 비고: 퇴사율 감소를 오직 직무 소개 페이지의 단독 효과로 단정할 수는 없으나, 동일 기간 내 다른 채용 정책 변화가 거의 없었다는 점과
+                                    신규 입사자 대상 면담에서 직무 정보의 충분성에 대한 긍정적인 피드백이 대다수 도출된 점을 미루어 볼 때 유의미한 개선 효과를 얻었다고 평가됩니다.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="achievement-body">
-                        <div class="ach-bg-card">
-                            <div class="ach-sub-title">배경 및 문제 분석</div>
-                            <p>
-                                2024년 12월 대법원 전원합의체 판결로 통상임금의 '고정성' 요건이 대폭 완화 및 조정되었습니다. 이에 따라 회사 임금체계 내 신규로 통상임금에 포함될 가능성이 높은 수당 4개 항목이 실시간 인건비 및 향후 법적 리스크에 미치는 영향력을 즉각 산정해야 했습니다.
-                            </p>
-                        </div>
-                        
-                        <div class="ach-action-card">
-                            <div class="ach-sub-title">수행 내용 및 해결 방안</div>
-                            <ul>
-                                <li><strong>대용량 통합 분석 시트 설계</strong>: 기술직 470명의 5개월 대용량 실데이터를 정제하고 핸들링할 수 있는 자동 연산 시트를 설계했습니다.</li>
-                                <li><strong>변수 제어 자동 비교</strong>: 기존 고정성이 결여되었던 4개 수당을 동적 변수로 설정하여 포함 여부에 따른 개별/전체 통상임금 시간급 차액을 실시간으로 비교 자동화했습니다.</li>
-                                <li><strong>비주얼 대시보드 구축</strong>: 부서·직급·수당별 총합 차액이 실시간으로 집계되어 신속한 의사결정을 돕는 표준 시뮬레이션 도구를 안정적으로 확보했습니다.</li>
-                            </ul>
+
+                    <!-- 성과 2 -->
+                    <div class="glass-card achievement-card emerald">
+                        <div class="achievement-index">02</div>
+                        <div class="achievement-header">
+                            <h4>통상임금 해석 변경에 따른 대규모 임금 분석 도구 구축</h4>
+                            <div class="metric-highlight-box emerald">
+                                <span class="metric-lbl">주요 성과</span>
+                                <span class="metric-val">기술직 470명 실시간 시뮬레이션 환경 확보</span>
+                            </div>
                         </div>
 
-                        <!-- 실시간 통상임금 시뮬레이터 데모 모형 -->
-                        <div class="wage-simulator-container">
-                            <div class="simulator-tag">PEOPLE ANALYTICS INTERACTIVE DEMO</div>
-                            <div class="simulator-grid">
-                                <!-- 조작 패널 (Inputs) -->
-                                <div class="sim-panel-left">
-                                    <h5 class="sim-title">시뮬레이션 변수 제어</h5>
-                                    
-                                    <!-- 기본급 슬라이더 -->
-                                    <div class="control-group">
-                                        <div class="control-label">
-                                            <span>기본급 (Base Salary)</span>
-                                            <div class="input-sync-wrap">
-                                                <input type="text" id="baseSalaryNum" value="3,000,000" class="sim-num-input">
-                                                <span class="control-unit">원</span>
+                        <div class="achievement-body">
+                            <div class="ach-bg-card">
+                                <div class="ach-sub-title">배경 및 문제 분석</div>
+                                <p>
+                                    2024년 12월 대법원 전원합의체 판결로 통상임금의 '고정성' 요건이 대폭 완화 및 조정되었습니다. 이에 따라 회사 임금체계 내 신규로 통상임금에
+                                    포함될 가능성이 높은 수당 4개 항목이 실시간 인건비 및 향후 법적 리스크에 미치는 영향력을 즉각 산정해야 했습니다.
+                                </p>
+                            </div>
+
+                            <div class="ach-action-card">
+                                <div class="ach-sub-title">수행 내용 및 해결 방안</div>
+                                <ul>
+                                    <li><strong>대용량 통합 분석 시트 설계</strong>: 기술직 470명의 5개월 대용량 실데이터를 정제하고 핸들링할 수 있는 자동 연산
+                                        시트를 설계했습니다.</li>
+                                    <li><strong>변수 제어 자동 비교</strong>: 기존 고정성이 결여되었던 4개 수당을 동적 변수로 설정하여 포함 여부에 따른 개별/전체
+                                        통상임금 시간급 차액을 실시간으로 비교 자동화했습니다.</li>
+                                    <li><strong>비주얼 대시보드 구축</strong>: 부서·직급·수당별 총합 차액이 실시간으로 집계되어 신속한 의사결정을 돕는 표준 시뮬레이션
+                                        도구를 안정적으로 확보했습니다.</li>
+                                </ul>
+                            </div>
+
+                            <!-- 실시간 통상임금 시뮬레이터 데모 모형 -->
+                            <div class="wage-simulator-container">
+                                <div class="simulator-tag">PEOPLE ANALYTICS INTERACTIVE DEMO</div>
+                                <div class="simulator-grid">
+                                    <!-- 조작 패널 (Inputs) -->
+                                    <div class="sim-panel-left">
+                                        <h5 class="sim-title">시뮬레이션 변수 제어</h5>
+
+                                        <!-- 기본급 슬라이더 -->
+                                        <div class="control-group">
+                                            <div class="control-label">
+                                                <span>기본급 (Base Salary)</span>
+                                                <div class="input-sync-wrap">
+                                                    <input type="text" id="baseSalaryNum" value="3,000,000"
+                                                        class="sim-num-input">
+                                                    <span class="control-unit">원</span>
+                                                </div>
+                                            </div>
+                                            <input type="range" id="baseSalary" min="2000000" max="5000000"
+                                                step="100000" value="3000000" class="sim-slider">
+                                        </div>
+
+                                        <!-- 연장근로 시간 슬라이더 -->
+                                        <div class="control-group">
+                                            <div class="control-label">
+                                                <span>월 평균 연장근로시간</span>
+                                                <div class="input-sync-wrap">
+                                                    <input type="number" id="overtimeHoursNum" min="0" max="50" step="1"
+                                                        value="40" class="sim-num-input">
+                                                    <span class="control-unit">시간</span>
+                                                </div>
+                                            </div>
+                                            <input type="range" id="overtimeHours" min="0" max="50" step="1" value="40"
+                                                class="sim-slider">
+                                        </div>
+
+                                        <!-- 분석 대상 인원 슬라이더 -->
+                                        <div class="control-group">
+                                            <div class="control-label">
+                                                <span>분석 대상 인원 (Headcount)</span>
+                                                <div class="input-sync-wrap">
+                                                    <input type="number" id="headcountNum" min="1" max="500" step="1"
+                                                        value="470" class="sim-num-input">
+                                                    <span class="control-unit">명</span>
+                                                </div>
+                                            </div>
+                                            <input type="range" id="headcount" min="1" max="500" step="1" value="470"
+                                                class="sim-slider">
+                                        </div>
+
+                                        <!-- 조회 주기 버튼 그룹 -->
+                                        <div class="control-group">
+                                            <div class="control-label" style="margin-bottom: 12px;">
+                                                <span>분석 조회 주기 (Period)</span>
+                                            </div>
+                                            <div class="period-tab-group">
+                                                <button type="button" class="period-tab-btn active"
+                                                    id="btnPeriodMonthly">월간 (Monthly)</button>
+                                                <button type="button" class="period-tab-btn" id="btnPeriodYearly">연간
+                                                    (Annual)</button>
                                             </div>
                                         </div>
-                                        <input type="range" id="baseSalary" min="2000000" max="5000000" step="100000" value="3000000" class="sim-slider">
-                                    </div>
-                                    
-                                    <!-- 연장근로 시간 슬라이더 -->
-                                    <div class="control-group">
-                                        <div class="control-label">
-                                            <span>월 평균 연장근로시간</span>
-                                            <div class="input-sync-wrap">
-                                                <input type="number" id="overtimeHoursNum" min="0" max="50" step="1" value="40" class="sim-num-input">
-                                                <span class="control-unit">시간</span>
+
+                                        <!-- 고정수당 토글 스위치 -->
+                                        <div class="control-group">
+                                            <div class="control-label" style="margin-bottom: 12px;">
+                                                <span>쟁점 수당별 고정성(통상임금 포함) 여부</span>
+                                            </div>
+
+                                            <div class="toggle-list">
+                                                <!-- 식대 -->
+                                                <div class="toggle-item">
+                                                    <div class="toggle-info">
+                                                        <span class="toggle-name">식대</span>
+                                                        <span class="toggle-period-badge monthly">월간</span>
+                                                        <span class="toggle-amount">+200,000원</span>
+                                                    </div>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="allowanceMeal" checked>
+                                                        <span class="slider-toggle"></span>
+                                                    </label>
+                                                </div>
+
+                                                <!-- 교통비 -->
+                                                <div class="toggle-item">
+                                                    <div class="toggle-info">
+                                                        <span class="toggle-name">교통비</span>
+                                                        <span class="toggle-period-badge monthly">월간</span>
+                                                        <span class="toggle-amount">+100,000원</span>
+                                                    </div>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="allowanceTrans" checked>
+                                                        <span class="slider-toggle"></span>
+                                                    </label>
+                                                </div>
+
+                                                <!-- 정기상여 -->
+                                                <div class="toggle-item">
+                                                    <div class="toggle-info">
+                                                        <span class="toggle-name">정기상여</span>
+                                                        <span class="toggle-period-badge">연간</span>
+                                                        <span class="toggle-amount">+2,000,000원 <small
+                                                                style="font-size: 0.75rem; color: var(--text-muted);">(월
+                                                                16.7만)</small></span>
+                                                    </div>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="allowanceBonus" checked>
+                                                        <span class="slider-toggle"></span>
+                                                    </label>
+                                                </div>
+
+                                                <!-- 명절비 (기본 미포함) -->
+                                                <div class="toggle-item">
+                                                    <div class="toggle-info">
+                                                        <span class="toggle-name">명절비</span>
+                                                        <span class="toggle-period-badge">연간</span>
+                                                        <span class="toggle-amount">+1,000,000원 <small
+                                                                style="font-size: 0.75rem; color: var(--text-muted);">(월
+                                                                8.3만)</small></span>
+                                                    </div>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="allowanceHoliday">
+                                                        <span class="slider-toggle"></span>
+                                                    </label>
+                                                </div>
+
+                                                <!-- 휴가비 (기본 미포함) -->
+                                                <div class="toggle-item">
+                                                    <div class="toggle-info">
+                                                        <span class="toggle-name">휴가비</span>
+                                                        <span class="toggle-period-badge">연간</span>
+                                                        <span class="toggle-amount">+800,000원 <small
+                                                                style="font-size: 0.75rem; color: var(--text-muted);">(월
+                                                                6.7만)</small></span>
+                                                    </div>
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="allowanceVacation">
+                                                        <span class="slider-toggle"></span>
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <input type="range" id="overtimeHours" min="0" max="50" step="1" value="40" class="sim-slider">
                                     </div>
 
-                                    <!-- 분석 대상 인원 슬라이더 -->
-                                    <div class="control-group">
-                                        <div class="control-label">
-                                            <span>분석 대상 인원 (Headcount)</span>
-                                            <div class="input-sync-wrap">
-                                                <input type="number" id="headcountNum" min="1" max="500" step="1" value="470" class="sim-num-input">
-                                                <span class="control-unit">명</span>
-                                            </div>
-                                        </div>
-                                        <input type="range" id="headcount" min="1" max="500" step="1" value="470" class="sim-slider">
-                                    </div>
-                                    
-                                    <!-- 조회 주기 버튼 그룹 -->
-                                    <div class="control-group">
-                                        <div class="control-label" style="margin-bottom: 12px;">
-                                            <span>분석 조회 주기 (Period)</span>
-                                        </div>
-                                        <div class="period-tab-group">
-                                            <button type="button" class="period-tab-btn active" id="btnPeriodMonthly">월간 (Monthly)</button>
-                                            <button type="button" class="period-tab-btn" id="btnPeriodYearly">연간 (Annual)</button>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- 고정수당 토글 스위치 -->
-                                    <div class="control-group">
-                                        <div class="control-label" style="margin-bottom: 12px;">
-                                            <span>쟁점 수당별 고정성(통상임금 포함) 여부</span>
-                                        </div>
-                                        
-                                        <div class="toggle-list">
-                                            <!-- 식대 -->
-                                            <div class="toggle-item">
-                                                <div class="toggle-info">
-                                                    <span class="toggle-name">식대</span>
-                                                    <span class="toggle-period-badge monthly">월간</span>
-                                                    <span class="toggle-amount">+200,000원</span>
+                                    <!-- 결과 패널 (Outputs) -->
+                                    <div class="sim-panel-right">
+                                        <h5 class="sim-title">실시간 분석 결과</h5>
+
+                                        <div class="result-board">
+                                            <!-- 통상임금 시간급 -->
+                                            <div class="result-card">
+                                                <span class="res-label">통상임금 시급 (1인 기준)</span>
+                                                <div class="res-num-wrap">
+                                                    <span class="res-number" id="hourlyWage">16,587</span>
+                                                    <span class="res-unit">원</span>
                                                 </div>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="allowanceMeal" checked>
-                                                    <span class="slider-toggle"></span>
-                                                </label>
+                                                <div class="res-comparison">
+                                                    <span class="comp-label">변경 전:</span>
+                                                    <span class="comp-val" id="beforeHourly">14,354</span>원
+                                                    <span class="comp-diff-val" id="diffHourly">(+2,871원)</span>
+                                                </div>
+                                                <div class="card-formula">
+                                                    <span class="math-expr">(<span id="f-baseSalary">3,000,000</span> +
+                                                        <span id="f-allowances">466,667</span>) / 209</span>
+                                                    <span class="formula-breakdown" id="formulaBreakdown">(식대 20만 + 교통
+                                                        10만 + 상여 16.7만)</span>
+                                                </div>
+                                                <p class="res-desc">기준시간: 월 209시간 (연간수당 1/12 분할 반영)</p>
                                             </div>
 
-                                            <!-- 교통비 -->
-                                            <div class="toggle-item">
-                                                <div class="toggle-info">
-                                                    <span class="toggle-name">교통비</span>
-                                                    <span class="toggle-period-badge monthly">월간</span>
-                                                    <span class="toggle-amount">+100,000원</span>
+                                            <!-- 예상 연장근로수당 -->
+                                            <div class="result-card">
+                                                <span class="res-label">예상 연장근로수당 <span id="labelOvertimePeriod">(월간
+                                                        총합)</span></span>
+                                                <div class="res-num-wrap">
+                                                    <span class="res-number highlight"
+                                                        id="overtimePay">467,753,400</span>
+                                                    <span class="res-unit">원</span>
                                                 </div>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="allowanceTrans" checked>
-                                                    <span class="slider-toggle"></span>
-                                                </label>
+                                                <div class="res-comparison">
+                                                    <span class="comp-label">변경 전:</span>
+                                                    <span class="comp-val" id="beforeOvertime">404,784,774</span>원
+                                                    <span class="comp-diff-val" id="diffOvertime">(+62,968,626원)</span>
+                                                </div>
+                                                <div class="card-formula">
+                                                    <span class="math-expr">(<span
+                                                            id="f-hourlyWageMultiplier">16,587</span> * <span
+                                                            id="f-overtimeHours">40</span> * 1.5) * <span
+                                                            id="f-headcount">470</span>명<span
+                                                            id="f-periodMultiplier"></span></span>
+                                                </div>
+                                                <p class="res-desc" id="descOvertime">470명 대상 연장근로 총합</p>
                                             </div>
 
-                                            <!-- 정기상여 -->
-                                            <div class="toggle-item">
-                                                <div class="toggle-info">
-                                                    <span class="toggle-name">정기상여</span>
-                                                    <span class="toggle-period-badge">연간</span>
-                                                    <span class="toggle-amount">+2,000,000원 <small style="font-size: 0.75rem; color: var(--text-muted);">(월 16.7만)</small></span>
+                                            <!-- 리스크 등급 표시기 -->
+                                            <div class="result-card full-width">
+                                                <span class="res-label">법적 리스크 등급</span>
+                                                <div class="risk-indicator-wrap">
+                                                    <div class="risk-lamp-group">
+                                                        <div class="risk-lamp green" id="riskGreen"></div>
+                                                        <div class="risk-lamp yellow" id="riskYellow"></div>
+                                                        <div class="risk-lamp red" id="riskRed"></div>
+                                                    </div>
+                                                    <div class="risk-text-box">
+                                                        <span class="risk-status" id="riskStatus">주의</span>
+                                                        <span class="risk-comment" id="riskComment">일부 쟁점 수당이 통상임금 산정에서
+                                                            제외되어 소송 리스크가 존재합니다.</span>
+                                                    </div>
                                                 </div>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="allowanceBonus" checked>
-                                                    <span class="slider-toggle"></span>
-                                                </label>
                                             </div>
- 
-                                            <!-- 명절비 (기본 미포함) -->
-                                            <div class="toggle-item">
-                                                <div class="toggle-info">
-                                                    <span class="toggle-name">명절비</span>
-                                                    <span class="toggle-period-badge">연간</span>
-                                                    <span class="toggle-amount">+1,000,000원 <small style="font-size: 0.75rem; color: var(--text-muted);">(월 8.3만)</small></span>
+
+                                            <!-- 총 인건비 변동 비교바 (이해하기 쉬운 프리미엄 비주얼 버전) -->
+                                            <div class="result-card full-width premium-delta-card">
+                                                <div class="delta-main-header">
+                                                    <span class="res-label">통상임금 범위 확대에 따른 총인건비 변동</span>
+                                                    <div class="delta-highlights">
+                                                        <span class="delta-value-badge" id="deltaPercent">+3.7%
+                                                            (+80,962,200원)</span>
+                                                    </div>
                                                 </div>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="allowanceHoliday">
-                                                    <span class="slider-toggle"></span>
-                                                </label>
-                                            </div>
- 
-                                            <!-- 휴가비 (기본 미포함) -->
-                                            <div class="toggle-item">
-                                                <div class="toggle-info">
-                                                    <span class="toggle-name">휴가비</span>
-                                                    <span class="toggle-period-badge">연간</span>
-                                                    <span class="toggle-amount">+800,000원 <small style="font-size: 0.75rem; color: var(--text-muted);">(월 6.7만)</small></span>
+
+                                                <!-- Before & After Grid -->
+                                                <div class="delta-comparison-grid">
+                                                    <div class="comparison-block before">
+                                                        <div class="comp-block-lbl">산입 전 총인건비</div>
+                                                        <div class="comp-block-val"><span
+                                                                id="baselineTotalCost">2,104,616,290</span><span
+                                                                class="comp-block-unit">원</span></div>
+                                                        <div class="comp-block-desc">기존 임금체계 (수당 미산입)</div>
+                                                    </div>
+                                                    <div class="comparison-arrow-wrap">
+                                                        <span class="comp-arrow-icon">➔</span>
+                                                    </div>
+                                                    <div class="comparison-block after">
+                                                        <div class="comp-block-lbl">산입 후 예상 총인건비</div>
+                                                        <div class="comp-block-val highlight"><span
+                                                                id="totalCost">2,167,586,890</span><span
+                                                                class="comp-block-unit">원</span></div>
+                                                        <div class="comp-block-desc">쟁점수당 산입 시 법정인건비</div>
+                                                    </div>
                                                 </div>
-                                                <label class="switch">
-                                                    <input type="checkbox" id="allowanceVacation">
-                                                    <span class="slider-toggle"></span>
-                                                </label>
+
+                                                <!-- 직관적인 계산 상세 분해 구조 (Calculation Breakdown Inline) -->
+                                                <div class="calculation-breakdown-inline">
+                                                    <span class="breakdown-inline-lbl">산출 공식</span>
+                                                    <span class="breakdown-inline-expr">
+                                                        [ 기본 <span id="f-totalBase">3,000,000</span> + 고정 <span
+                                                            id="f-totalAllowances">616,667</span> + 연장 <span
+                                                            id="f-totalOvertime">995,220</span> ] 원
+                                                        <span class="expr-operator">×</span>
+                                                        <span id="f-totalHeadcount">470</span>명<span
+                                                            id="f-totalPeriodMultiplier"></span>
+                                                    </span>
+                                                </div>
+
+                                                <!-- 상승률 게이지 바 -->
+                                                <div class="delta-bar-section">
+                                                    <div class="delta-bar-lbl-row">
+                                                        <span>기존 대비 인건비 증가율</span>
+                                                        <span class="delta-bar-percent" id="deltaBarPercent">3.0%</span>
+                                                    </div>
+                                                    <div class="delta-bar-container">
+                                                        <div class="delta-bar-fill" id="deltaBarFill"
+                                                            style="width: 12.0%;"></div>
+                                                    </div>
+                                                </div>
+
+                                                <p class="res-desc">
+                                                    * <strong>쉽게 설명해 드릴게요</strong>: 쟁점이 되는 고정수당(식대, 교통비 등)을 통상임금에 산입하면
+                                                    <strong>통상시급이 상승</strong>하게 되며, 이에 비례해 <strong>연장근로수당 및 전체 인건비가 동반
+                                                        상승</strong>하게 됩니다. 위 그래프는 이에 따른 총액 변동 지표입니다. <span
+                                                        id="labelBaselineCostPeriod">(월간 총합)</span>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                 
-                                 <!-- 결과 패널 (Outputs) -->
-                                 <div class="sim-panel-right">
-                                     <h5 class="sim-title">실시간 분석 결과</h5>
-                                     
-                                     <div class="result-board">
-                                         <!-- 통상임금 시간급 -->
-                                         <div class="result-card">
-                                             <span class="res-label">통상임금 시급 (1인 기준)</span>
-                                             <div class="res-num-wrap">
-                                                 <span class="res-number" id="hourlyWage">16,587</span>
-                                                 <span class="res-unit">원</span>
-                                             </div>
-                                             <div class="res-comparison">
-                                                 <span class="comp-label">변경 전:</span>
-                                                 <span class="comp-val" id="beforeHourly">14,354</span>원
-                                                 <span class="comp-diff-val" id="diffHourly">(+2,871원)</span>
-                                             </div>
-                                             <div class="card-formula">
-                                                 <span class="math-expr">(<span id="f-baseSalary">3,000,000</span> + <span id="f-allowances">466,667</span>) / 209</span>
-                                                 <span class="formula-breakdown" id="formulaBreakdown">(식대 20만 + 교통 10만 + 상여 16.7만)</span>
-                                             </div>
-                                             <p class="res-desc">기준시간: 월 209시간 (연간수당 1/12 분할 반영)</p>
-                                         </div>
-                                         
-                                         <!-- 예상 연장근로수당 -->
-                                         <div class="result-card">
-                                             <span class="res-label">예상 연장근로수당 <span id="labelOvertimePeriod">(월간 총합)</span></span>
-                                             <div class="res-num-wrap">
-                                                 <span class="res-number highlight" id="overtimePay">467,753,400</span>
-                                                 <span class="res-unit">원</span>
-                                             </div>
-                                             <div class="res-comparison">
-                                                 <span class="comp-label">변경 전:</span>
-                                                 <span class="comp-val" id="beforeOvertime">404,784,774</span>원
-                                                 <span class="comp-diff-val" id="diffOvertime">(+62,968,626원)</span>
-                                             </div>
-                                             <div class="card-formula">
-                                                 <span class="math-expr">(<span id="f-hourlyWageMultiplier">16,587</span> * <span id="f-overtimeHours">40</span> * 1.5) * <span id="f-headcount">470</span>명<span id="f-periodMultiplier"></span></span>
-                                             </div>
-                                             <p class="res-desc" id="descOvertime">470명 대상 연장근로 총합</p>
-                                         </div>
- 
-                                         <!-- 리스크 등급 표시기 -->
-                                         <div class="result-card full-width">
-                                             <span class="res-label">법적 리스크 등급</span>
-                                             <div class="risk-indicator-wrap">
-                                                 <div class="risk-lamp-group">
-                                                     <div class="risk-lamp green" id="riskGreen"></div>
-                                                     <div class="risk-lamp yellow" id="riskYellow"></div>
-                                                     <div class="risk-lamp red" id="riskRed"></div>
-                                                 </div>
-                                                 <div class="risk-text-box">
-                                                     <span class="risk-status" id="riskStatus">주의</span>
-                                                     <span class="risk-comment" id="riskComment">일부 쟁점 수당이 통상임금 산정에서 제외되어 소송 리스크가 존재합니다.</span>
-                                                 </div>
-                                             </div>
-                                         </div>
- 
-                                          <!-- 총 인건비 변동 비교바 (이해하기 쉬운 프리미엄 비주얼 버전) -->
-                                          <div class="result-card full-width premium-delta-card">
-                                              <div class="delta-main-header">
-                                                  <span class="res-label">통상임금 범위 확대에 따른 총인건비 변동</span>
-                                                  <div class="delta-highlights">
-                                                      <span class="delta-value-badge" id="deltaPercent">+3.7% (+80,962,200원)</span>
-                                                  </div>
-                                              </div>
-                                              
-                                              <!-- Before & After Grid -->
-                                              <div class="delta-comparison-grid">
-                                                  <div class="comparison-block before">
-                                                      <div class="comp-block-lbl">산입 전 총인건비</div>
-                                                      <div class="comp-block-val"><span id="baselineTotalCost">2,104,616,290</span><span class="comp-block-unit">원</span></div>
-                                                      <div class="comp-block-desc">기존 임금체계 (수당 미산입)</div>
-                                                  </div>
-                                                  <div class="comparison-arrow-wrap">
-                                                      <span class="comp-arrow-icon">➔</span>
-                                                  </div>
-                                                  <div class="comparison-block after">
-                                                      <div class="comp-block-lbl">산입 후 예상 총인건비</div>
-                                                      <div class="comp-block-val highlight"><span id="totalCost">2,167,586,890</span><span class="comp-block-unit">원</span></div>
-                                                      <div class="comp-block-desc">쟁점수당 산입 시 법정인건비</div>
-                                                  </div>
-                                              </div>
-
-                                              <!-- 직관적인 계산 상세 분해 구조 (Calculation Breakdown Inline) -->
-                                              <div class="calculation-breakdown-inline">
-                                                   <span class="breakdown-inline-lbl">산출 공식</span>
-                                                   <span class="breakdown-inline-expr">
-                                                       [ 기본 <span id="f-totalBase">3,000,000</span> + 고정 <span id="f-totalAllowances">616,667</span> + 연장 <span id="f-totalOvertime">995,220</span> ] 원
-                                                       <span class="expr-operator">×</span>
-                                                       <span id="f-totalHeadcount">470</span>명<span id="f-totalPeriodMultiplier"></span>
-                                                   </span>
-                                               </div>
-
-                                              <!-- 상승률 게이지 바 -->
-                                              <div class="delta-bar-section">
-                                                  <div class="delta-bar-lbl-row">
-                                                      <span>기존 대비 인건비 증가율</span>
-                                                      <span class="delta-bar-percent" id="deltaBarPercent">3.0%</span>
-                                                  </div>
-                                                  <div class="delta-bar-container">
-                                                      <div class="delta-bar-fill" id="deltaBarFill" style="width: 12.0%;"></div>
-                                                  </div>
-                                              </div>
-                                              
-                                              <p class="res-desc">
-                                                  * <strong>쉽게 설명해 드릴게요</strong>: 쟁점이 되는 고정수당(식대, 교통비 등)을 통상임금에 산입하면 <strong>통상시급이 상승</strong>하게 되며, 이에 비례해 <strong>연장근로수당 및 전체 인건비가 동반 상승</strong>하게 됩니다. 위 그래프는 이에 따른 총액 변동 지표입니다. <span id="labelBaselineCostPeriod">(월간 총합)</span>
-                                              </p>
-                                          </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                    </div>
-                </div>
-
-</div>
-        </div>
-    </section>
-
-    <!-- 데이터 분석 역량 섹션 -->
-    <section id="analytics" class="reveal">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">전문 역량</span>
-                <h2 class="section-title">데이터 분석 <span>전문 스택</span></h2>
-            </div>
-            
-            <div class="tech-capability-grid">
-                <!-- 보유 자격증 상세 1 -->
-                <div class="glass-card credential-item">
-                    <span class="cred-icon">🐍</span>
-                    <div class="cred-info">
-                        <h4>빅데이터분석기사</h4>
-                        <p>Python을 활용한 데이터 가공 및 정제, EDA(탐색적 데이터 분석), 기초 통계 검정, 머신러닝 예측 모델 설계 및 평가 전 과정에 대한 공인 역량 검증.</p>
-                    </div>
-                </div>
-                
-                <!-- 보유 자격증 상세 2 -->
-                <div class="glass-card credential-item">
-                    <span class="cred-icon">📊</span>
-                    <div class="cred-info">
-                        <h4>경영정보시각화능력 (PowerBI)</h4>
-                        <p>Power Query를 활용한 ETL 처리, DAX 함수 설계를 통한 복잡한 정량 데이터 가공, 실시간 경영진용 의사결정 대시보드 시각화 설계 역량 검증.</p>
-                    </div>
-                </div>
-
-                <!-- 보유 자격증 상세 3 -->
-                <div class="glass-card credential-item">
-                    <span class="cred-icon">⚡</span>
-                    <div class="cred-info">
-                        <h4>컴퓨터활용능력 1급</h4>
-                        <p>고급 엑셀 수식 설계, 데이터베이스 관리, 매크로 및 VBA 구현 등 실무 급여 자동화 인프라의 탄탄한 토대를 제공합니다.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- 향후 커리어 지향점 -->
-    <section id="direction" class="reveal">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">성장 로드맵</span>
-                <h2 class="section-title">커리어 <span>지향점</span></h2>
-            </div>
-            
-            <div class="direction-grid">
-                <!-- 지향점 1 -->
-                <div class="glass-card direction-card">
-                    <span class="dir-idx">01</span>
-                    <h3>리텐션 분석</h3>
-                    <p>직원들의 근태 흐름, 입사 만족도 추이 데이터를 머신러닝 퇴사 예측 모델링과 결합하여 이탈 위험군을 사전에 감지하고 조직을 안정화합니다.</p>
-                </div>
-
-                <!-- 지향점 2 -->
-                <div class="glass-card direction-card">
-                    <span class="dir-idx" style="color: var(--emerald); border-color: rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.05);">02</span>
-                    <h3>보상 분석</h3>
-                    <p>시장 임금 수준 데이터와 내부 보상 규모의 경쟁력을 다각적으로 수치 비교하고, 조직 변경에 따른 인건비 시나리오를 과학적으로 시뮬레이션합니다.</p>
-                </div>
-
-                <!-- 지향점 3 -->
-                <div class="glass-card direction-card">
-                    <span class="dir-idx">03</span>
-                    <h3>교육 효과성</h3>
-                    <p>교육 과정 수료 전과 후의 업무 성과 데이터, 자기 효능감 추이 변화를 ROI로 계량하여 실질적으로 성과를 올리는 사내 맞춤형 과정을 설계합니다.</p>
-                </div>
-
-                <!-- 지향점 4 -->
-                <div class="glass-card direction-card">
-                    <span class="dir-idx" style="color: var(--emerald); border-color: rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.05);">04</span>
-                    <h3>HR 의사결정 체계</h3>
-                    <p>경영진이 언제든지 부서별 근로시간, 핵심 인적 마일스톤을 즉시 모니터링할 수 있도록 Python과 PowerBI 기반 정형 데이터 마트를 구축합니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 연락처 섹션 -->
-    <section id="contact" class="reveal">
-        <div class="container">
-            <div class="glass-card contact-wrap">
-                <span class="section-tag">제안 및 문의</span>
-                <h2>함께 데이터 기반의 HR 미래를 열어가고 싶습니다</h2>
-                <p class="lead">
-                    데이터로 조직의 숨겨진 보틀넥을 발굴하고, <br class="pc-only">
-                    안정적인 HR 운영 인프라 구축에 동참할 준비가 되어 있습니다.
-                </p>
-                
-                <div class="email-wrapper">
-                    <div class="email-box" id="emailBox" title="클릭하여 이메일 주소 복사">
-                        <span class="email-copy-badge">
-                            <svg class="copy-badge-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                            <span>이메일 복사</span>
-                        </span>
-                        <span class="email-address">jopss1001@gmail.com</span>
-                    </div>
-                    <div class="toast-msg" id="toastMsg">복사되었습니다</div>
-                </div>
-
-                <!-- 실시간 10초 퀵 커피챗 제안 폼 -->
-                <div class="quick-chat-container">
-                    <div class="quick-chat-title">10초 퀵 커피챗 제안 (이메일 즉시 전송)</div>
-                    <form id="coffeeChatForm" class="quick-chat-form">
-                        <div class="form-row-grid">
-                            <div class="form-group">
-                                <input type="text" id="chatSender" placeholder="성함 또는 기업명" required class="form-input">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="chatContact" placeholder="연락처 또는 이메일" required class="form-input">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <select id="chatPurpose" class="form-select" required>
-                                <option value="" disabled selected>제안 목적 선택</option>
-                                <option value="채용 및 인사 상담">💼 채용/이직 제안</option>
-                                <option value="커피챗 대화">☕ 커피챗 제안</option>
-                                <option value="협업 및 외주 의뢰">⚡ 프로젝트 협업</option>
-                                <option value="단순 업무 교류">🤝 단순 실무 네트워킹</option>
-                            </select>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 데이터 분석 역량 섹션 -->
+        <section id="analytics" class="reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">전문 역량</span>
+                    <h2 class="section-title">데이터 분석 <span>전문 스택</span></h2>
+                </div>
+
+                <div class="tech-capability-grid">
+                    <!-- 보유 자격증 상세 1 -->
+                    <div class="glass-card credential-item">
+                        <span class="cred-icon">🐍</span>
+                        <div class="cred-info">
+                            <h4>빅데이터분석기사</h4>
+                            <p>Python을 활용한 데이터 가공 및 정제, EDA(탐색적 데이터 분석), 기초 통계 검정, 머신러닝 예측 모델 설계 및 평가 전 과정에 대한 공인 역량 검증.
+                            </p>
                         </div>
-                        <div class="form-group">
-                            <textarea id="chatMessage" placeholder="간단한 제안 메시지를 적어주세요..." required class="form-textarea" rows="2"></textarea>
+                    </div>
+
+                    <!-- 보유 자격증 상세 2 -->
+                    <div class="glass-card credential-item">
+                        <span class="cred-icon">📊</span>
+                        <div class="cred-info">
+                            <h4>경영정보시각화능력 (PowerBI)</h4>
+                            <p>Power Query를 활용한 ETL 처리, DAX 함수 설계를 통한 복잡한 정량 데이터 가공, 실시간 경영진용 의사결정 대시보드 시각화 설계 역량 검증.
+                            </p>
                         </div>
-                        <button type="submit" id="btnSubmitChat" class="btn btn-primary form-submit-btn">
-                            <span class="btn-text">제안서 즉시 발송하기 🚀</span>
-                            <span class="btn-spinner" style="display: none;">전송 중... ⚡</span>
-                        </button>
-                    </form>
-                    
-                    <!-- 전송 완료 피드백 (기본 숨김) -->
-                    <div id="chatSuccessPanel" class="chat-success-panel" style="display: none;">
-                        <span class="success-icon">☕</span>
-                        <h4 class="success-title">이메일 전송 창이 준비되었습니다!</h4>
-                        <p class="success-desc">작성하신 제안 내용이 담긴 이메일 작성 화면이 열렸습니다. 발송을 누르면 김민수 님께 즉시 전달됩니다. 만약 메일 작성 창이 자동으로 열리지 않았다면, 상단의 '이메일 복사' 버튼을 눌러 직접 제안해주셔도 좋습니다. 감사합니다!</p>
-                        <button type="button" id="btnResetChat" class="btn btn-secondary btn-sm" style="margin-top: 12px; padding: 6px 14px; font-size: 0.8rem;">새 제안서 보내기</button>
+                    </div>
+
+                    <!-- 보유 자격증 상세 3 -->
+                    <div class="glass-card credential-item">
+                        <span class="cred-icon">⚡</span>
+                        <div class="cred-info">
+                            <h4>컴퓨터활용능력 1급</h4>
+                            <p>고급 엑셀 수식 설계, 데이터베이스 관리, 매크로 및 VBA 구현 등 실무 급여 자동화 인프라의 탄탄한 토대를 제공합니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 푸터 -->
-    <footer>
-        <div class="container">
-            <p>© 2026 김민수. 데이터 에스테틱 기반 기획 및 제작.</p>
-        </div>
-    </footer>
 
-    <script src="script.js?v=1.1.7"></script>
+        <!-- 향후 커리어 지향점 -->
+        <section id="direction" class="reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">성장 로드맵</span>
+                    <h2 class="section-title">커리어 <span>지향점</span></h2>
+                </div>
+
+                <div class="direction-grid">
+                    <!-- 지향점 1 -->
+                    <div class="glass-card direction-card">
+                        <span class="dir-idx">01</span>
+                        <h3>리텐션 분석</h3>
+                        <p>직원들의 근태 흐름, 입사 만족도 추이 데이터를 머신러닝 퇴사 예측 모델링과 결합하여 이탈 위험군을 사전에 감지하고 조직을 안정화합니다.</p>
+                    </div>
+
+                    <!-- 지향점 2 -->
+                    <div class="glass-card direction-card">
+                        <span class="dir-idx"
+                            style="color: var(--emerald); border-color: rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.05);">02</span>
+                        <h3>보상 분석</h3>
+                        <p>시장 임금 수준 데이터와 내부 보상 규모의 경쟁력을 다각적으로 수치 비교하고, 조직 변경에 따른 인건비 시나리오를 과학적으로 시뮬레이션합니다.</p>
+                    </div>
+
+                    <!-- 지향점 3 -->
+                    <div class="glass-card direction-card">
+                        <span class="dir-idx">03</span>
+                        <h3>교육 효과성</h3>
+                        <p>교육 과정 수료 전과 후의 업무 성과 데이터, 자기 효능감 추이 변화를 ROI로 계량하여 실질적으로 성과를 올리는 사내 맞춤형 과정을 설계합니다.</p>
+                    </div>
+
+                    <!-- 지향점 4 -->
+                    <div class="glass-card direction-card">
+                        <span class="dir-idx"
+                            style="color: var(--emerald); border-color: rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.05);">04</span>
+                        <h3>HR 의사결정 체계</h3>
+                        <p>경영진이 언제든지 부서별 근로시간, 핵심 인적 마일스톤을 즉시 모니터링할 수 있도록 Python과 PowerBI 기반 정형 데이터 마트를 구축합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 연락처 섹션 -->
+        <section id="contact" class="reveal">
+            <div class="container">
+                <div class="glass-card contact-wrap">
+                    <span class="section-tag">제안 및 문의</span>
+                    <h2>함께 데이터 기반의 HR 미래를 열어가고 싶습니다</h2>
+                    <p class="lead">
+                        데이터로 조직의 숨겨진 보틀넥을 발굴하고, <br class="pc-only">
+                        안정적인 HR 운영 인프라 구축에 동참할 준비가 되어 있습니다.
+                    </p>
+
+                    <div class="email-wrapper">
+                        <div class="email-box" id="emailBox" title="클릭하여 이메일 주소 복사">
+                            <span class="email-copy-badge">
+                                <svg class="copy-badge-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <span>이메일 복사</span>
+                            </span>
+                            <span class="email-address">jopss1001@gmail.com</span>
+                        </div>
+                        <div class="toast-msg" id="toastMsg">복사되었습니다</div>
+                    </div>
+
+                    <!-- 실시간 10초 퀵 커피챗 제안 폼 -->
+                    <div class="quick-chat-container">
+                        <div class="quick-chat-title">10초 퀵 커피챗 제안 (이메일 즉시 전송)</div>
+                        <form id="coffeeChatForm" class="quick-chat-form">
+                            <div class="form-row-grid">
+                                <div class="form-group">
+                                    <input type="text" id="chatSender" placeholder="성함 또는 기업명" required
+                                        class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="chatContact" placeholder="연락처 또는 이메일" required
+                                        class="form-input">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select id="chatPurpose" class="form-select" required>
+                                    <option value="" disabled selected>제안 목적 선택</option>
+                                    <option value="채용 및 인사 상담">💼 채용/이직 제안</option>
+                                    <option value="커피챗 대화">☕ 커피챗 제안</option>
+                                    <option value="협업 및 외주 의뢰">⚡ 프로젝트 협업</option>
+                                    <option value="단순 업무 교류">🤝 단순 실무 네트워킹</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="chatMessage" placeholder="간단한 제안 메시지를 적어주세요..." required
+                                    class="form-textarea" rows="2"></textarea>
+                            </div>
+                            <button type="submit" id="btnSubmitChat" class="btn btn-primary form-submit-btn">
+                                <span class="btn-text">제안서 즉시 발송하기 🚀</span>
+                                <span class="btn-spinner" style="display: none;">전송 중... ⚡</span>
+                            </button>
+                        </form>
+
+                        <!-- 전송 완료 피드백 (기본 숨김) -->
+                        <div id="chatSuccessPanel" class="chat-success-panel" style="display: none;">
+                            <span class="success-icon">☕</span>
+                            <h4 class="success-title">이메일 전송 창이 준비되었습니다!</h4>
+                            <p class="success-desc">작성하신 제안 내용이 담긴 이메일 작성 화면이 열렸습니다. 발송을 누르면 김민수 님께 즉시 전달됩니다. 만약 메일 작성
+                                창이 자동으로 열리지 않았다면, 상단의 '이메일 복사' 버튼을 눌러 직접 제안해주셔도 좋습니다. 감사합니다!</p>
+                            <button type="button" id="btnResetChat" class="btn btn-secondary btn-sm"
+                                style="margin-top: 12px; padding: 6px 14px; font-size: 0.8rem;">새 제안서 보내기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 푸터 -->
+        </main>
+<footer>
+            <div class="container">
+                <p>© 2026 김민수. 데이터 에스테틱 기반 기획 및 제작.</p>
+            </div>
+        </footer>
+
+        <script src="script.js?v=1.2.0" defer></script>
 </body>
+
 </html>
